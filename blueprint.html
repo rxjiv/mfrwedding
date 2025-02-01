@@ -4,8 +4,703 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destination Wedding</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Link to CSS file -->
+    <title>Welcome Page</title>
+    <style>
+        /* Universal Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Keep the same background for everything */
+       body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: url('https://i.imgur.com/mgGeRsk.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Cursive', sans-serif;
+    text-align: center;
+    backdrop-filter: blur(0px); /* Add blur effect to the background */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+/* Make the content responsive and center it */
+#websiteContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    max-width: 1200px; /* Limit the maximum width of the content */
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+}
+
+
+        /* Center the Hello Page */
+        #helloPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Hello Text */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        /* Circular Button */
+        .revealButton {
+            width: 60px;
+            height: 60px;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 50%;
+            font-size: 25px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .revealButton:hover {
+            background-color: #d94e3e;
+        }
+
+        /* Hide main content initially */
+        #websiteContent {
+            display: none;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Password Overlay */
+        #passwordOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease, visibility 0s 0.5s;
+            z-index: 1000;
+            /* Ensure overlay is on top of other elements */
+        }
+
+        #passwordBox {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: black;
+            z-index: 1001;
+            /* Ensure input box is above the overlay */
+        }
+
+        #passwordInput {
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+       /* Fixed Navbar */
+header {
+    width: 100%;
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Optional: add a semi-transparent background */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+        /* Center all sections */
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            /* Darker background */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            display: none;
+        }
+/* Main Content */
+/* Main Content */
+#websiteContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 150px; /* Increase top padding for overall space */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Style for the Welcome Section */
+#welcome {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 900px;
+}
+
+#welcome h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+/* Welcome Text Styling */
+.welcome-text {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Date Styling */
+.welcome-date {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Add Google Font for Cursive Style */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* Couple's Name Styling */
+.couple-names {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 75px;
+    margin-bottom: 0px;
+}
+
+
+/* Welcome Message Styling */
+.welcome-message {
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 100px;
+}
+
+
+section {
+    margin-top: 60px; /* Adds consistent margin to push down each section */
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+/* Style for the 'Our Story' section */
+#our-story {
+    width: 100%;
+    max-width: 900px; /* Limit the width of the "Our Story" section */
+    margin: 0 auto; /* Centers the section */
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+#our-story h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+.story-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin: 0 auto;
+    max-width: 900px; /* Prevent text from getting too wide */
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between images */
+    margin-top: 20px;
+    justify-items: center; /* Center the images */
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Maximum width for images */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Optional: Add responsive design */
+@media (max-width: 768px) {
+    .image-gallery {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+
+    #our-story {
+        max-width: 100%; /* Allow it to stretch on smaller screens */
+    }
+
+    .story-text {
+        max-width: 100%; /* Ensure text does not overflow */
+    }
+}
+
+
+    /* Adjusting font size and margins for readability */
+    .story-text p {
+        margin-bottom: 20px;
+    }
+
+        .active {
+            display: flex;
+        }
+
+  /* Container to hold both sidebar and content */
+.itinerary-container {
+    display: flex;
+    align-items: flex-start; /* Aligns sidebar and content */
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+//* Sidebar Styling */
+.itinerary-sidebar {
+    width: 200px; /* Fixed sidebar width */
+    background: rgba(0, 0, 0, 0.6); /* Match the overall theme */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1); /* Softer shadow */
+}
+
+/* Sidebar Links */
+.itinerary-sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #ccc; /* Light gray for readability */
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+/* Hover Effect */
+.itinerary-sidebar a:hover {
+    color: white;
+    background-color: #ff6f61; /* Coral hover effect */
+}
+
+
+.itinerary-sidebar a:hover {
+    color: white;
+    background-color: #ff6f61;
+    border-radius: 5px;
+}
+
+/* Main Content Styling */
+.itinerary-content section {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    padding: 20px;
+}
+
+
+
+
+/* Individual Sections */
+.itinerary-content section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #ff6f61;
+}
+
+
+        p {
+            color: #ccc;
+        }
+
+        /* Styling for the events section */
+#events h2 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+/* Style for each event */
+.event {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+/* Style for the event date (bold and underlined) */
+.event-date {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #ff6f61; /* Matching with the theme color */
+    margin-bottom: 5px;
+}
+
+/* Style for the event name */
+.event-name {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-left: 20px; /* Adds spacing between date and event name */
+}
+
+/* Optional: Style for the 'Full Details to Follow' text */
+.story-text {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+#book-here {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#book-here h2 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+    margin-bottom: 15px;
+}
+
+#book-here h3 {
+    font-size: 2rem;
+    color: #ff6f61;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+#book-here p {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #ff6f61;
+    font-weight: bold;
+}
+
+.important-note {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ff6f61;
+    margin-top: 15px;
+}
+
+/* Styling for the RSVP form */
+#rsvp h2 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #fff;
+}
+
+input, textarea {
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e65c50;
+}
+
+
+
+#room-details {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #ccc;
+}
+
+#room-details h2 {
+    font-size: 2.8rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+#room-details h3 {
+    font-size: 2.2rem;
+    color: #ff6f61;
+    margin-top: 30px;
+}
+
+#room-details h4 {
+    font-size: 2rem;
+    color: #ff6f61;
+    margin-top: 25px;
+}
+
+#room-details h5 {
+    font-size: 1.8rem;
+    color: #ff6f61;
+    margin-top: 20px;
+}
+
+.room-category {
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.room-description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li em {
+    font-style: italic;
+}
+
+ul li strong {
+    font-weight: bold;
+}
+
+.room-category p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+
+        /* RSVP Form Stacked */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px; /* Reduced gap between elements */
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the items horizontally */
+    gap: 15px; /* Space between form fields */
+    max-width: 400px;
+    margin: 0 auto; /* Centers the form horizontally within its parent */
+}
+
+form input[type="text"],
+form input[type="radio"],
+form button {
+    width: 100%;
+    max-width: 300px; /* Optional: limit max width of form elements */
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form .radio-group {
+    display: flex;
+    justify-content: center; /* Centers radio buttons horizontally */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+form input[type="radio"] {
+    width: auto; /* Keeps the radio buttons compact */
+}
+
+form button {
+    width: auto; /* Optional: adjust button to content width */
+    margin-top: 10px; /* Small space above the button */
+}
+
+
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("IVJxwsFAz60sp9qjo"); // Replace with your EmailJS Public Key
+        })();
+
+    function revealWebsite() {
+        document.getElementById("helloPage").style.display = "none";
+        document.getElementById("websiteContent").style.display = "block";
+        document.getElementById("passwordOverlay").style.visibility = "visible";
+        document.getElementById("passwordOverlay").style.opacity = "1";
+        document.getElementById("passwordInput").focus(); // Automatically focus on password input
+    }
+
+    function checkPassword() {
+        const password = document.getElementById("passwordInput").value;
+        if (password === "apple") {
+            document.getElementById("passwordOverlay").style.visibility = "hidden";
+            document.getElementById("passwordOverlay").style.opacity = "0";
+            document.getElementById("welcome").style.display = "block"; // Show the "Welcome" section
+        } else {
+            alert("Incorrect password. Please try again.");
+        }
+    }
+
+        function handleEnterKey(event) {
+            if (event.key === "Enter") {
+                checkPassword();
+            }
+        }
+
+        function sendEmail(event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_90c6i3h", "template_1a74b59", event.target)
+                .then(function (response) {
+                    alert("RSVP Submitted Successfully!");
+                }, function (error) {
+                    alert("Failed to send RSVP. Please try again.");
+                });
+        }
+
+        function showSection(sectionId) {
+                // Hide all sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.remove('active');
+                    section.style.display = 'none'; // Hide the section
+                });
+
+                // Show the selected section
+                const selectedSection = document.getElementById(sectionId);
+                selectedSection.classList.add('active');
+                selectedSection.style.display = 'block'; // Make the section visible
+            }
+
+
+        // Function to scroll to the respective section in the itinerary content
+    function scrollToItinerary(sectionId) {
+            console.log("Navigating to:", sectionId);
+            var section = document.getElementById(sectionId);
+            if (section) {
+                document.querySelectorAll(".itinerary-content section").forEach(sec => {
+                    sec.style.display = "none"; // Hide all sections
+                });
+
+                section.style.display = "block"; // Show only the clicked section
+                section.scrollIntoView({ behavior: "smooth" });
+            } else {
+                console.error("Section not found:", sectionId);
+            }
+        }
+
+
+
+        window.onload = function () {
+            document.getElementById("passwordInput").addEventListener("keydown", handleEnterKey);
+        };
+    </script>
 </head>
 
 <body>
@@ -29,8 +724,6 @@
                 <input type="password" id="passwordInput">
                 <button onclick="checkPassword()">Submit</button>
             </div>
-        </div>
-
         </div>
     
         <header>
@@ -341,12 +1034,6 @@
                     </section>
 
     </div>
-    <!-- Load EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    emailjs.init("IVJxwsFAz60sp9qjo"); // Replace with your EmailJS Public Key
-</script>
-    <script src="script.js"></script>
 
 </body>
 
