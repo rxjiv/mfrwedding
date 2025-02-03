@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <!-- Black screen with "Hello" message -->
     <div id="helloPage">
             <!-- <h1>Welcome, to our happily ever after </h1> -->
@@ -44,55 +43,57 @@
             </nav>
         </header>
     
-    <section id="welcome" class="active" style="display: none;">
-        <h2>Pack Your Bags!</h2>
+        <section id="welcome" class="active" style="display: none;">
+            <div class="welcome-container">
+                <h2>Pack Your Bags!</h2>
+                
+                <p class="story-text"><strong>Dear Family & Friends,</strong></p>
         
-        <p class="greeting">Dear Family & Friends:</p>
+                <p class="story-text">
+                    We are absolutely thrilled to welcome you to our wedding celebration at 
+                    <strong>Planet Hollywood Cancun, Mexico!</strong>
+                </p>
         
-        <p class="story-text">
-            We are absolutely thrilled to welcome you to our wedding celebration at Planet
-            Hollywood Cancun, Mexico!
-        </p>
+                <p class="story-text">
+                    This website is your go-to guide for all the key details about our wedding, including 
+                    travel, accommodations, and the booking process for our wedding group.
+                </p>
         
-        <p class="story-text">
-            This website is your go-to guide for all the key details about our wedding, including
-            travel, accommodations, and the booking process for our wedding group.
-        </p>
+                <p class="story-text">
+                    To make this experience as seamless and enjoyable as possible, we’ve secured a 
+                    special group room block just for our friends and family. We’ve also partnered with 
+                    our amazing travel specialist and wedding planner, <strong>Mevy Rim</strong>, to assist you 
+                    with all your travel needs.
+                </p>
         
-        <p class="story-text">
-            To make this experience as seamless and enjoyable as possible, we’ve secured a
-            special group room block just for our friends and family. We’ve also partnered with
-            our amazing travel specialist and wedding planner, Mevy Rim, to assist you with all
-            your travel needs.
-        </p>
+                <p class="story-text">
+                    We kindly request all guests to book their accommodations within our coordinated 
+                    group block. You can easily book your room reservation by selecting the 
+                    <strong>BOOK THIS TRIP</strong> tab on this website or by contacting Mevy directly. 
+                    By securing your room reservation, we will consider it a confirmation of your RSVP to attend the wedding.
+                </p>
         
-        <p class="story-text">
-            We kindly request all guests to book their accommodations within our coordinated
-            group block. You can easily book your room reservation by selecting the BOOK
-            THIS TRIP tab on this website or by contacting Mevy directly. By securing your
-            room reservation, we will consider it a confirmation of your RSVP to attend the
-            wedding.
-        </p>
+                <p class="story-text">
+                    For added convenience, we’ve arranged special rates for ground transfers, which 
+                    you’re welcome to take advantage of. While our travel website also allows you to 
+                    book flights at published rates (similar to other online platforms), you’re free to 
+                    book your transfers and flights however you prefer.
+                </p>
         
-        <p class="story-text">
-            For added convenience, we’ve arranged special rates for ground transfers, which
-            you’re welcome to take advantage of. While our travel website also allows you to
-            book flights at published rates (similar to other online platforms), you’re free to
-            book your transfers and flights however you prefer.
-        </p>
+                <p class="story-text">
+                    We can’t wait to celebrate with all of you in paradise!
+                </p>
         
-        <p class="story-text">
-            We can’t wait to celebrate with all of you in paradise!
-        </p>
+                <p class="closing"><strong>With love,</strong></p>
+                <p class="couple-names">Avi & Arnab</p>
         
-        <p class="closing">With love,</p>
-        <p class="couple-names">Avi & Arnab</p>
+                <!-- SINGULAR IMAGE-->
+                <div class="image-item">
+                    <img src="https://i.imgur.com/e3asWeO.png" alt="Avi & Arnab">
+                </div>
+            </div>
+        </section>
         
-        <!-- SINGULAR IMAGE-->
-        <div class="image-item">
-            <img src="https://i.imgur.com/e3asWeO.png" alt="Avi & Arnab">
-        </div>
-    </section>
 
 <section id="events" class="active" style="display: none;">
     <div class="event">
@@ -121,15 +122,21 @@
     </div>
 
 <section id="our-story" class="active" style="display: none;">
-        <h2>Its quite funny actually!</h2>
-<p class="story-text">
-    We were from entirely different worlds. We never would have met - if not for our friend-of-a-friend-of-a-friend's random
-    dinner party. A 1 in 87 chance of meeting. Yet it happened.
-    
-    
-    
-    And the rest is history.
-</p>
+        <h2>Our Story</h2>
+        <div class="story-container">
+            <p class="story-text">
+                During a global pandemic when masks were in and social distancing was the norm, our love story sparked with a Teams message. It didn’t take long to realize that no amount of quarantine could keep us apart.
+                <br><br>
+                From dating right away to meeting halfway in Prince Edward County for wine, sunsets, and responsible masking of course, we packed more milestones into eight months than some do in a lifetime. Engagement? Check. Courthouse wedding? Check. Moving to a whole new country together? Double check. Since then, we’ve been building a laughter-filled, slightly chaotic, and incredibly happy life together.
+                <br><br>
+                For years, it’s been an ongoing joke that our wedding was happening “next year”. Well, the wait is officially over! We’re beyond thrilled to celebrate our Hindu wedding and five-year anniversary with all of you in April 2026 in Mexico.
+                <br><br>
+                Thank you for being part of our love story—we can’t wait to eat, dance, and create unforgettable memories together!
+                <br><br>
+                <strong>With Luv, Jutu xoxo</strong>
+            </p>
+        </div>
+        
 
 <!-- IMAGE GALLERY -->
 
@@ -154,19 +161,40 @@
 
 
 <section id="rsvp">
-    <h2>RSVP Form</h2>
+    <h2>RSVP</h2>
     <br>
     <form onsubmit="sendEmail(event)">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
+        <!-- Attendance Question -->
+        <label for="attendance">Will you be attending?</label>
+        <div class="radio-group">
+            <input type="radio" id="yes" name="attendance" value="Yes" required>
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="attendance" value="No">
+            <label for="no">No</label>
+        </div>
 
-        <label for="attendance-message">Will you be attending? Please let us know:</label>
-        <textarea id="attendance-message" name="attendance-message" rows="4" placeholder="Type your response here..."
-            required></textarea>
+        <!-- Number of Guests -->
+        <label for="guests">How many guests?</label>
+        <input type="number" id="guests" name="guests" min="1" placeholder="Enter number" required>
 
+        <!-- Guest Names -->
+        <label for="guest-names">Names of all guests attending (as per passport):</label>
+        <textarea id="guest-names" name="guest-names" rows="3" placeholder="Enter full names..." required></textarea>
+
+        <!-- Contact Email -->
+        <label for="email">Email to stay in contact:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <!-- Special Notes -->
+        <label for="special-notes">Please enter any extra notes or questions below:</label>
+        <textarea id="special-notes" name="special-notes" rows="3" placeholder="Enter here..."></textarea>
+
+        <!-- Submit Button -->
         <button type="submit">Submit RSVP</button>
     </form>
 </section>
+
+
 
 
         <!-- Itinerary Section with Sidebar Navigation -->

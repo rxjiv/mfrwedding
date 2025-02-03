@@ -26,14 +26,16 @@ function checkPassword() {
     const password = document.getElementById("passwordInput").value;
     if (password === "apple") {
         document.getElementById("passwordOverlay").style.display = "none";
-        document.getElementById("websiteContent").style.display = "block"; 
-
-        // Call the same function used in the navbar to show "Welcome"
-        showSection('welcome'); 
+        document.getElementById("websiteContent").style.display = "block";
+        document.getElementById("welcome").style.display = "block"; 
+        
+        // Show the navbar after successful login
+        document.querySelector("header").style.display = "block"; 
     } else {
         alert("Incorrect password. Try again.");
     }
 }
+
 
 
 

@@ -132,6 +132,7 @@ h1 {
 
 /* Fixed Navbar */
 header {
+display: none;
 width: 100%;
 position: fixed; /* Fix the navbar at the top */
 top: 0;
@@ -216,17 +217,22 @@ color: #fff;
 margin-bottom: 20px;
 }
 
+.welcome-container {
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center text */
+    padding: 20px; /* Space around content */
+}
+
 /* Add Google Font for Cursive Style */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
-/* Couple's Name Styling */
+
 .couple-names {
-font-family: 'Dancing Script', cursive;
-font-size: 3rem;
-font-weight: bold;
-color: #fff;
-margin-top: 75px;
-margin-bottom: 0px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
 }
 
 
@@ -266,12 +272,19 @@ color: #ff6f61;
 }
 
 .story-text {
-font-size: 1.2rem;
-line-height: 1.8;
-color: #ccc;
-margin: 0 auto;
-max-width: 900px; /* Prevent text from getting too wide */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center the text */
+    font-size: 1.3rem; /* Adjust font size for readability */
+    line-height: 1.8; /* Improve line spacing */
+    color: white; /* Keep text readable on any background */
+    padding: 20px; /* Add space around text */
+    border-radius: 10px; /* Keep soft edges */
+    box-shadow: none; /* Remove shadow */
+    background: none; /* Remove background */
 }
+
+
 
 /* Image Gallery */
 .image-gallery {
@@ -283,10 +296,10 @@ justify-items: center; /* Center the images */
 }
 
 .image-item img {
-width: 100%;
-height: auto;
-max-width: 400px; /* Maximum width for images */
-border-radius: 10px; /* Optional: rounded corners */
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 /* Optional: Add responsive design */
@@ -308,6 +321,13 @@ max-width: 100%; /* Ensure text does not overflow */
 /* Adjusting font size and margins for readability */
 .story-text p {
 margin-bottom: 20px;
+}
+
+
+.closing {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .active {
@@ -462,53 +482,56 @@ margin-top: 15px;
 }
 
 /* Styling for the RSVP form */
+#rsvp {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%; /* Control the width like the "Pack Your Bags!" section */
+    margin: 40px auto; /* Center it with space above and below */
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6); /* Similar semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
 #rsvp h2 {
-font-size: 2.5rem;
-color: #ff6f61;
-margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #ff6f61;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 form {
-display: flex;
-flex-direction: column;
-max-width: 400px;
-margin: auto;
-}
-
-label {
-font-size: 1.2rem;
-margin-top: 10px;
-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
 }
 
 input, textarea {
-font-size: 1rem;
-padding: 10px;
-margin-top: 5px;
-border-radius: 5px;
-border: none;
-width: 100%;
-}
-
-textarea {
-resize: none;
-height: 100px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
 }
 
 button {
-background-color: #ff6f61;
-color: white;
-font-size: 1.2rem;
-padding: 10px;
-margin-top: 15px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
+    background-color: #ff6f61;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-background-color: #e65c50;
+    background-color: #e65c50;
 }
+
 
 
 
