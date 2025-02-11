@@ -276,7 +276,7 @@ color: #9b0000;
     margin: 0 auto; /* Center horizontally */
     text-align: center; /* Center the text */
     font-size: 1.3rem; /* Adjust font size for readability */
-    line-height: 1.8; /* Improve line spacing */
+    line-height: 1.2; /* Improve line spacing */
     color: white; /* Keep text readable on any background */
     padding: 20px; /* Add space around text */
     border-radius: 10px; /* Keep soft edges */
@@ -334,15 +334,62 @@ margin-bottom: 20px;
     display: flex;
 }
 
-/* Container to hold both sidebar and content */
-.itinerary-container {
-display: flex;
-align-items: flex-start; /* Aligns sidebar and content */
-gap: 20px;
-max-width: 1000px;
-margin: auto;
-padding: 20px;
+/* Ensure itinerary content shows up */
+.itinerary-content {
+    display: block !important; /* Ensure it is visible */
+    opacity: 1 !important; /* Ensure it's fully opaque */
+    visibility: visible !important; /* Ensure it's not hidden */
+    padding: 20px; /* Add padding for spacing inside the content */
+    width: 100%; /* Make the content take up full width of the container */
+    text-align: center; /* Center the text within the content */
 }
+
+#itinerary {
+    width: 80%; /* Make the section take up 80% of the width */
+    max-width: 900px; /* Set max width to avoid being too wide */
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    color: white;
+    margin: 40px auto; /* Center the section horizontally with space around it */
+}
+
+#itinerary h2 {
+    font-size: 2.5rem; /* Set heading font size */
+    color: #9b0000; /* Red color for consistency with the theme */
+    margin-bottom: 20px; /* Space between the heading and the text */
+}
+
+#itinerary .story-text {
+    font-size: 1.3rem; /* Text size for the story section */
+    color: #ccc; /* Light gray for the text */
+    margin-bottom: 20px; /* Add space after each paragraph */
+    line-height: 1.6; /* Line height for better readability */
+    padding: 0 20px; /* Add padding inside for spacing */
+}
+
+#itinerary .highlight {
+    color: #9b0000; /* Red color for highlighted text */
+    font-weight: bold;
+}
+
+/* Make it responsive for smaller screens */
+@media (max-width: 768px) {
+    #itinerary {
+        width: 90%; /* Increase the width for smaller screens */
+        padding: 20px;
+    }
+
+    #itinerary h2 {
+        font-size: 2rem; /* Adjust the font size for smaller screens */
+    }
+
+    #itinerary .story-text {
+        font-size: 1.1rem; /* Adjust text size for better readability */
+    }
+}
+
 
 //* Sidebar Styling */
 .itinerary-sidebar {
