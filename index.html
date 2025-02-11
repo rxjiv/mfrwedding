@@ -148,37 +148,49 @@
 
 <section id="rsvp">
     <h2>RSVP</h2>
-    <br>
+    <p class="story-text">
+        To confirm your attendance, both your RSVP and room reservation within our coordinated group block are required.
+    </p>
+    
+    <p class="story-text">
+        Once you RSVP here, please follow the instructions on our travel website to book your room and ensure you’re part of our special celebration.
+    </p>
+    
+    <p class="story-text">
+        We can’t wait to celebrate with you in paradise!
+    </p>
+
+    <p class="story-text">
+        We kindly ask that only one person from your party or family submits an RSVP on behalf of everyone attending. Please include the names of all guests in your group below to ensure we have an accurate guest list.
+    </p>
+
     <form onsubmit="sendEmail(event)">
         <!-- Attendance Question -->
         <label for="attendance">Will you be attending?</label>
         <div class="radio-group">
             <input type="radio" id="yes" name="attendance" value="Yes" required>
-            <label for="yes">Yes</label>
+            <label for="yes">Yes! Can’t wait for an unforgettable celebration with you two!</label>
             <input type="radio" id="no" name="attendance" value="No">
-            <label for="no">No</label>
+            <label for="no">Regretfully unable to attend. Wishing you both the best!</label>
         </div>
 
-        <!-- Number of Guests -->
-        <label for="guests">How many guests?</label>
-        <input type="number" id="guests" name="guests" min="1" placeholder="Enter number" required>
-
-        <!-- Guest Names -->
-        <label for="guest-names">Names of all guests attending (as per passport):</label>
+        <!-- First and Last Name -->
+        <label for="guest-names">First and Last Name (please include your name and everyone’s in your party/family):</label>
         <textarea id="guest-names" name="guest-names" rows="3" placeholder="Enter full names..." required></textarea>
 
-        <!-- Contact Email -->
-        <label for="email">Email to stay in contact:</label>
+        <!-- Email to stay in contact -->
+        <label for="email">Email (we recommend using the same email for your room travel reservation):</label>
         <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
         <!-- Special Notes -->
-        <label for="special-notes">Please enter any extra notes or questions below:</label>
+        <label for="special-notes">Notes/Message:</label>
         <textarea id="special-notes" name="special-notes" rows="3" placeholder="Enter here..."></textarea>
 
         <!-- Submit Button -->
         <button type="submit">Submit RSVP</button>
     </form>
 </section>
+
 
 
 
