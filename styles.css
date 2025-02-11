@@ -54,7 +54,7 @@ h1 {
 .revealButton {
     width: 60px;
     height: 60px;
-    background-color: #ff6f61;
+    background-color: #9b0000;
     border: none;
     border-radius: 50%;
     font-size: 25px;
@@ -114,7 +114,7 @@ h1 {
 }
 
 #passwordBox button {
-    background-color: #ff6f61;
+    background-color: #9b0000;
     color: white;
     font-size: 1.2rem;
     padding: 10px;
@@ -200,7 +200,7 @@ max-width: 900px;
 #welcome h2 {
 font-size: 2.5rem;
 margin-bottom: 20px;
-color: #ff6f61;
+color: #9b0000;
 }
 
 /* Welcome Text Styling */
@@ -268,7 +268,7 @@ box-sizing: border-box; /* Prevent overflow */
 #our-story h2 {
 font-size: 2.5rem;
 margin-bottom: 20px;
-color: #ff6f61;
+color: #9b0000;
 }
 
 .story-text {
@@ -367,13 +367,13 @@ border-radius: 5px;
 /* Hover Effect */
 .itinerary-sidebar a:hover {
 color: white;
-background-color: #ff6f61; /* Coral hover effect */
+background-color: #9b0000; /* Coral hover effect */
 }
 
 
 .itinerary-sidebar a:hover {
 color: white;
-background-color: #ff6f61;
+background-color: #9b0000;
 border-radius: 5px;
 }
 
@@ -395,7 +395,7 @@ margin-bottom: 30px;
 }
 
 h2 {
-color: #ff6f61;
+color: #9b0000;
 }
 
 
@@ -406,7 +406,7 @@ p {
 /* Styling for the events section */
 #events h2 {
 font-size: 2.5rem;
-color: #ff6f61;
+color: #9b0000;
 margin-bottom: 20px;
 }
 
@@ -422,7 +422,7 @@ border-bottom: 1px solid #444;
 font-size: 1.8rem;
 font-weight: bold;
 text-decoration: underline;
-color: #ff6f61; /* Matching with the theme color */
+color: #9b0000; /* Matching with the theme color */
 margin-bottom: 5px;
 }
 
@@ -451,13 +451,13 @@ margin: 0 auto;
 
 #book-here h2 {
 font-size: 2.5rem;
-color: #ff6f61;
+color: #9b0000;
 margin-bottom: 15px;
 }
 
 #book-here h3 {
 font-size: 2rem;
-color: #ff6f61;
+color: #9b0000;
 margin-top: 20px;
 text-decoration: underline;
 }
@@ -470,14 +470,14 @@ line-height: 1.6;
 }
 
 .highlight {
-color: #ff6f61;
+color: #9b0000;
 font-weight: bold;
 }
 
 .important-note {
 font-size: 1.3rem;
 font-weight: bold;
-color: #ff6f61;
+color: #9b0000;
 margin-top: 15px;
 }
 
@@ -497,7 +497,7 @@ margin-top: 15px;
 
 #rsvp h2 {
     font-size: 2.5rem;
-    color: #ff6f61;
+    color: #9b0000;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -519,7 +519,7 @@ input, textarea {
 }
 
 button {
-    background-color: #ff6f61;
+    background-color: #9b0000;
     color: white;
     font-size: 1.2rem;
     padding: 10px;
@@ -547,25 +547,25 @@ color: #ccc;
 
 #room-details h2 {
 font-size: 2.8rem;
-color: #ff6f61;
+color: #9b0000;
 margin-bottom: 20px;
 }
 
 #room-details h3 {
 font-size: 2.2rem;
-color: #ff6f61;
+color: #9b0000;
 margin-top: 30px;
 }
 
 #room-details h4 {
 font-size: 2rem;
-color: #ff6f61;
+color: #9b0000;
 margin-top: 25px;
 }
 
 #room-details h5 {
 font-size: 1.8rem;
-color: #ff6f61;
+color: #9b0000;
 margin-top: 20px;
 }
 

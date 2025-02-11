@@ -62,7 +62,7 @@
         .revealButton {
             width: 60px;
             height: 60px;
-            background-color: #ff6f61;
+            background-color: #9b0000;
             border: none;
             border-radius: 50%;
             font-size: 25px;
@@ -191,7 +191,7 @@ nav a {
 #welcome h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #ff6f61;
+    color: #9b0000;
 }
 
 /* Welcome Text Styling */
@@ -254,7 +254,7 @@ section {
 #our-story h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #ff6f61;
+    color: #9b0000;
 }
 
 .story-text {
@@ -339,13 +339,13 @@ section {
 /* Hover Effect */
 .itinerary-sidebar a:hover {
     color: white;
-    background-color: #ff6f61; /* Coral hover effect */
+    background-color: #9b0000; /* Coral hover effect */
 }
 
 
 .itinerary-sidebar a:hover {
     color: white;
-    background-color: #ff6f61;
+    background-color: #9b0000;
     border-radius: 5px;
 }
 
@@ -367,7 +367,7 @@ section {
 }
 
 h2 {
-    color: #ff6f61;
+    color: #9b0000;
 }
 
 
@@ -378,7 +378,7 @@ h2 {
         /* Styling for the events section */
 #events h2 {
     font-size: 2.5rem;
-    color: #ff6f61;
+    color: #9b0000;
     margin-bottom: 20px;
 }
 
@@ -394,7 +394,7 @@ h2 {
     font-size: 1.8rem;
     font-weight: bold;
     text-decoration: underline;
-    color: #ff6f61; /* Matching with the theme color */
+    color: #9b0000; /* Matching with the theme color */
     margin-bottom: 5px;
 }
 
@@ -423,13 +423,13 @@ h2 {
 
 #book-here h2 {
     font-size: 2.5rem;
-    color: #ff6f61;
+    color: #9b0000;
     margin-bottom: 15px;
 }
 
 #book-here h3 {
     font-size: 2rem;
-    color: #ff6f61;
+    color: #9b0000;
     margin-top: 20px;
     text-decoration: underline;
 }
@@ -442,21 +442,21 @@ h2 {
 }
 
 .highlight {
-    color: #ff6f61;
+    color: #9b0000;
     font-weight: bold;
 }
 
 .important-note {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #ff6f61;
+    color: #9b0000;
     margin-top: 15px;
 }
 
 /* Styling for the RSVP form */
 #rsvp h2 {
     font-size: 2.5rem;
-    color: #ff6f61;
+    color: #9b0000;
     margin-bottom: 20px;
 }
 
@@ -488,7 +488,7 @@ textarea {
 }
 
 button {
-    background-color: #ff6f61;
+    background-color: #9b0000;
     color: white;
     font-size: 1.2rem;
     padding: 10px;
@@ -516,25 +516,25 @@ button:hover {
 
 #room-details h2 {
     font-size: 2.8rem;
-    color: #ff6f61;
+    color: #9b0000;
     margin-bottom: 20px;
 }
 
 #room-details h3 {
     font-size: 2.2rem;
-    color: #ff6f61;
+    color: #9b0000;
     margin-top: 30px;
 }
 
 #room-details h4 {
     font-size: 2rem;
-    color: #ff6f61;
+    color: #9b0000;
     margin-top: 25px;
 }
 
 #room-details h5 {
     font-size: 1.8rem;
-    color: #ff6f61;
+    color: #9b0000;
     margin-top: 20px;
 }
 
@@ -625,81 +625,7 @@ form button {
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        (function () {
-            emailjs.init("IVJxwsFAz60sp9qjo"); // Replace with your EmailJS Public Key
-        })();
 
-    function revealWebsite() {
-        document.getElementById("helloPage").style.display = "none";
-        document.getElementById("websiteContent").style.display = "block";
-        document.getElementById("passwordOverlay").style.visibility = "visible";
-        document.getElementById("passwordOverlay").style.opacity = "1";
-        document.getElementById("passwordInput").focus(); // Automatically focus on password input
-    }
-
-    function checkPassword() {
-        const password = document.getElementById("passwordInput").value;
-        if (password === "apple") {
-            document.getElementById("passwordOverlay").style.visibility = "hidden";
-            document.getElementById("passwordOverlay").style.opacity = "0";
-            document.getElementById("welcome").style.display = "block"; // Show the "Welcome" section
-        } else {
-            alert("Incorrect password. Please try again.");
-        }
-    }
-
-        function handleEnterKey(event) {
-            if (event.key === "Enter") {
-                checkPassword();
-            }
-        }
-
-        function sendEmail(event) {
-            event.preventDefault();
-
-            emailjs.sendForm("service_90c6i3h", "template_1a74b59", event.target)
-                .then(function (response) {
-                    alert("RSVP Submitted Successfully!");
-                }, function (error) {
-                    alert("Failed to send RSVP. Please try again.");
-                });
-        }
-
-        function showSection(sectionId) {
-                // Hide all sections
-                document.querySelectorAll('section').forEach(section => {
-                    section.classList.remove('active');
-                    section.style.display = 'none'; // Hide the section
-                });
-
-                // Show the selected section
-                const selectedSection = document.getElementById(sectionId);
-                selectedSection.classList.add('active');
-                selectedSection.style.display = 'block'; // Make the section visible
-            }
-
-
-        // Function to scroll to the respective section in the itinerary content
-    function scrollToItinerary(sectionId) {
-            console.log("Navigating to:", sectionId);
-            var section = document.getElementById(sectionId);
-            if (section) {
-                document.querySelectorAll(".itinerary-content section").forEach(sec => {
-                    sec.style.display = "none"; // Hide all sections
-                });
-
-                section.style.display = "block"; // Show only the clicked section
-                section.scrollIntoView({ behavior: "smooth" });
-            } else {
-                console.error("Section not found:", sectionId);
-            }
-        }
-
-
-
-        window.onload = function () {
-            document.getElementById("passwordInput").addEventListener("keydown", handleEnterKey);
-        };
     </script>
 </head>
 
