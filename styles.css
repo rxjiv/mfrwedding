@@ -761,10 +761,11 @@ margin-top: 10px; /* Small space above the button */
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
+    /* Ensures dots stay inside the container */
     width: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    /* Adjust width as needed */
+    margin: 0 auto;
 }
 
 /* Individual Slide */
@@ -828,10 +829,13 @@ margin-top: 10px; /* Small space above the button */
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Dots Navigation */
 .dots-container {
+    position: absolute;
+    /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    margin-top: 10px;
+    z-index: 10;
 }
 
 .dot {
