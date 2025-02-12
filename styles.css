@@ -158,6 +158,10 @@ box-sizing: border-box; /* Ensures padding doesn't cause overflow */
     z-index: 1001; /* Ensure it's above the overlay */
 }
 
+#passwordBox p {
+    color:#000
+}
+
 #passwordInput {
     font-size: 16px;
     padding: 10px;
