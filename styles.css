@@ -505,14 +505,12 @@ margin-bottom: 20px;
 .event {
 margin-bottom: 20px;
 padding: 10px 0;
-border-bottom: 1px solid #444;
 }
 
 /* Style for the event date (bold and underlined) */
 .event-date {
 font-size: 1.8rem;
 font-weight: bold;
-text-decoration: underline;
 color: #9b0000; /* Matching with the theme color */
 margin-bottom: 5px;
 }
