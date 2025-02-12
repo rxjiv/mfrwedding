@@ -703,7 +703,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 15px; /* Reduced gap between elements */
-max-width: 400px;
+max-width: 450px;
 margin: 0 auto;
 }
 
@@ -712,7 +712,7 @@ display: flex;
 flex-direction: column;
 align-items: center; /* Centers the items horizontally */
 gap: 15px; /* Space between form fields */
-max-width: 400px;
+max-width: 450px;
 margin: 0 auto; /* Centers the form horizontally within its parent */
 }
 
