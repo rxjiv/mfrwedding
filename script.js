@@ -58,15 +58,28 @@ function sendEmail(event) {
 }
 
 function showSection(sectionId) {
+    // Hide all sections
     document.querySelectorAll('section').forEach(section => {
-        section.style.display = 'none'; // Hide all sections
+        section.style.display = 'none';
+        section.classList.remove('active'); // Remove active class
     });
 
+    // Show selected section
     const selectedSection = document.getElementById(sectionId);
     if (selectedSection) {
         selectedSection.style.display = 'block';
+        selectedSection.classList.add('active'); // Add active class
+
+        // Check if gallery section is selected
+        let dotsContainer = document.querySelector('.dots-container');
+        if (sectionId === 'gallery') {
+            dotsContainer.style.display = 'block'; // Show dots
+        } else {
+            dotsContainer.style.display = 'none'; // Hide dots
+        }
     }
 }
+
 
 function scrollToItinerary(sectionId) {
     console.log("Navigating to:", sectionId);

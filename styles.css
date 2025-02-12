@@ -202,6 +202,8 @@ font-weight: bold;
 color: white;
 cursor: pointer;
 }
+
+
 /* Center all sections */
 section {
     display: flex;
@@ -291,15 +293,6 @@ margin-top: 100px;
 }
 
 
-section {
-margin-top: 60px; /* Adds consistent margin to push down each section */
-width: 100%;
-text-align: center;
-padding: 40px;
-background-color: rgba(0, 0, 0, 0.6);
-border-radius: 10px;
-box-sizing: border-box;
-}
 /* Style for the 'Our Story' section */
 #our-story {
 width: 100%;
@@ -828,14 +821,15 @@ margin-top: 10px; /* Small space above the button */
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 .dots-container {
-    position: absolute;
-    /* Adjust this value as needed */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 10;
+    display: none;
+    /* Hide dots initially */
+    justify-content: center;
+    margin-top: 10px;
+}
+#gallery.active .dots-container {
+    display: block;
+    /* Show dots when in Gallery */
 }
 
 .dot {
