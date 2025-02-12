@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Rellion';
+    src: url('../fonts/rellion.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* Keep the same background for everything */
 body {
 height: 100vh;
@@ -15,8 +23,7 @@ align-items: center;
 background: url('pics/cover5bw.jpg') no-repeat center center fixed;
 background-size: cover;
 color: white;
-font-family: 'Cursive', sans-serif;
-text-align: center;
+    font-family: 'Rellion', sans-serif;text-align: center;
 backdrop-filter: blur(0px); /* Add blur effect to the background */
 margin: 0;
 padding: 0;
@@ -63,7 +70,7 @@ box-sizing: border-box; /* Ensures padding doesn't cause overflow */
 
 /* Styling the heading */
 .hello-box h2 {
-    font-family: 'Playfair Display', serif;
+        font-family: 'Rellion', sans-serif;
     /* Elegant font */
     font-size: 2rem;
     font-weight: bold;
