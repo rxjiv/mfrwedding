@@ -164,17 +164,23 @@
 
     <form onsubmit="sendEmail(event)">
         <!-- Attendance Question -->
-        <label for="attendance">Will you be attending?</label>
+         <br>
+        <label for="attendance"><h3>Will you be attending?</h3></label>
         <div class="radio-group">
-            <input type="radio" id="yes" name="attendance" value="Yes" required>
-            <label for="yes">Yes! Can’t wait for an unforgettable celebration with you two!</label>
-            <input type="radio" id="no" name="attendance" value="No">
-            <label for="no">Regretfully unable to attend. Wishing you both the best!</label>
-        </div>
+    <div class="radio-option">
+        <input type="radio" id="yes" name="attendance" value="Yes" required>
+        <label for="yes">Yes! Can’t wait for an unforgettable celebration with you two!</label>
+    </div>
+    <div class="radio-option">
+        <input type="radio" id="no" name="attendance" value="No">
+        <label for="no">Regretfully unable to attend. Wishing you both the best!</label>
+    </div>
+</div>
+
 
         <!-- First and Last Name -->
         <label for="guest-names">First and Last Name (please include your name and everyone’s in your party/family):</label>
-        <textarea id="guest-names" name="guest-names" rows="3" placeholder="Enter full names..." required></textarea>
+        <textarea id="guest-names" name="guest-names" rows="3" placeholder="" required></textarea>
 
         <!-- Email to stay in contact -->
         <label for="email">Email (we recommend using the same email for your room travel reservation):</label>
@@ -182,7 +188,7 @@
 
         <!-- Special Notes -->
         <label for="special-notes">Notes/Message:</label>
-        <textarea id="special-notes" name="special-notes" rows="3" placeholder="Enter here..."></textarea>
+        <textarea id="special-notes" name="special-notes" rows="3" placeholder=""></textarea>
 
         <!-- Submit Button -->
         <button type="submit">Submit RSVP</button>
