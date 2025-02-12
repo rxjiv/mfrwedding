@@ -821,15 +821,26 @@ margin-top: 10px; /* Small space above the button */
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+/* Hide dots by default */
 .dots-container {
     display: none;
-    /* Hide dots initially */
     justify-content: center;
     margin-top: 10px;
 }
-#gallery.active .dots-container {
-    display: block;
-    /* Show dots when in Gallery */
+
+/* Show dots when inside the gallery */
+#gallery .dots-container {
+    display: flex;
+}
+
+/* Prevent dots from shifting on mobile */
+@media (max-width: 768px) {
+    .dots-container {
+        position: relative;
+        /* Keeps them within the gallery */
+        bottom: 0;
+        margin-top: 5px;
+    }
 }
 
 .dot {

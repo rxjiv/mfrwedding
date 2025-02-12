@@ -69,14 +69,14 @@ function showSection(sectionId) {
     if (selectedSection) {
         selectedSection.style.display = 'block';
         selectedSection.classList.add('active'); // Add active class
+    }
 
-        // Check if gallery section is selected
-        let dotsContainer = document.querySelector('.dots-container');
-        if (sectionId === 'gallery') {
-            dotsContainer.style.display = 'block'; // Show dots
-        } else {
-            dotsContainer.style.display = 'none'; // Hide dots
-        }
+    // Fix dots visibility
+    let dotsContainer = document.querySelector('.dots-container');
+    if (sectionId === 'gallery') {
+        dotsContainer.style.display = 'flex'; // Show dots only in gallery
+    } else {
+        dotsContainer.style.display = 'none'; // Hide everywhere else
     }
 }
 
