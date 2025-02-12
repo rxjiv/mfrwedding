@@ -189,7 +189,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 25px;
   }
   
 
@@ -319,7 +319,7 @@ color: #9b0000;
     max-width: 800px; /* Limit width for better readability */
     margin: 0 auto; /* Center horizontally */
     text-align: center; /* Center the text */
-    font-size: 1.3rem; /* Adjust font size for readability */
+    font-size: 2rem; /* Adjust font size for readability */
     line-height: 1; /* Improve line spacing */
     color: white; /* Keep text readable on any background */
     padding: 0px; /* Add space around text */
@@ -526,7 +526,7 @@ margin-left: 20px; /* Adds spacing between date and event name */
 
 /* Optional: Style for the 'Full Details to Follow' text */
 .story-text {
-font-size: 1.2rem;
+font-size: 1.4rem;
 color: #ccc;
 margin-top: 20px;
 }
