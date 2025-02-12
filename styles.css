@@ -742,4 +742,109 @@ form button {
 width: auto; /* Optional: adjust button to content width */
 margin-top: 10px; /* Small space above the button */
 }
+/* Gallery Section */
+#gallery {
+    width: 100%;
+    max-width: 800px;
+    /* Smaller width */
+    margin: 40px auto;
+    text-align: center;
+}
 
+/* Title Styling */
+#gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #9b0000;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual Slide */
+.gallery-slide {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+/* Smaller Slide Images */
+.gallery-slide img {
+    width: 80%;
+    /* Adjust size */
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Fading Effect */
+.fade {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots Navigation */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: #9b0000;
+}

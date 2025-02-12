@@ -32,18 +32,20 @@
 
         </div>
     
-        <header>
-            <br>
-            <h1>AVINANDA & ARNAB</h1>
-            <br>
-            <nav>
-                <a onclick="showSection('welcome')">WELCOME</a>
-                <a onclick="showSection('our-story')">OUR STORY</a>
-                <a onclick="showSection('events')">EVENTS</a>
-                <a onclick="showSection('itinerary')">TRAVEL</a>
-                <a onclick="showSection('rsvp')">RSVP</a>
-            </nav>
-        </header>
+<header>
+    <br>
+    <h1>AVINANDA & ARNAB</h1>
+    <br>
+    <nav>
+        <a onclick="showSection('welcome')">WELCOME</a>
+        <a onclick="showSection('our-story')">OUR STORY</a>
+        <a onclick="showSection('gallery')">GALLERY</a> <!-- NEW: Gallery Link -->
+        <a onclick="showSection('events')">EVENTS</a>
+        <a onclick="showSection('itinerary')">TRAVEL</a>
+        <a onclick="showSection('rsvp')">RSVP</a>
+    </nav>
+</header>
+
     
         <section id="welcome" class="active" style="display: none;">
             <div class="welcome-container">
@@ -194,6 +196,46 @@
         <button type="submit">Submit RSVP</button>
     </form>
 </section>
+
+<section id="gallery" class="active" style="display: none;">
+    <h2>GALLERY</h2>
+    <div class="slideshow-container">
+        <div class="gallery-slide fade">
+            <img src="pics/1.jpeg" alt="Gallery Image 1">
+        </div>
+        <div class="gallery-slide fade">
+            <img src="pics/2.jpeg" alt="Gallery Image 2">
+        </div>
+        <div class="gallery-slide fade">
+            <img src="pics/3.jpeg" alt="Gallery Image 3">
+        </div>
+        <div class="gallery-slide fade">
+            <img src="pics/4.jpeg" alt="Gallery Image 4">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="changeGallerySlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeGallerySlide(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots for navigation -->
+    <div class="dots-container">
+        <span class="dot" onclick="currentGallerySlide(1)"></span>
+        <span class="dot" onclick="currentGallerySlide(2)"></span>
+        <span class="dot" onclick="currentGallerySlide(3)"></span>
+        <span class="dot" onclick="currentGallerySlide(4)"></span>
+    </div>
+</section>
+
+    <!-- Dots for navigation -->
+    <div class="dots-container">
+        <span class="dot" onclick="currentGallerySlide(1)"></span>
+        <span class="dot" onclick="currentGallerySlide(2)"></span>
+        <span class="dot" onclick="currentGallerySlide(3)"></span>
+        <span class="dot" onclick="currentGallerySlide(4)"></span>
+    </div>
+</section>
+
 
 
 

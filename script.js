@@ -89,3 +89,53 @@ window.onload = function () {
         }
     });
 };
+
+let galleryIndex = 0;
+showGallerySlides();
+
+/* Auto-play the slideshow */
+function showGallerySlides() {
+    let slides = document.querySelectorAll(".gallery-slide");
+    let dots = document.querySelectorAll(".dot");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    galleryIndex++;
+    if (galleryIndex > slides.length) { galleryIndex = 1; }
+
+    slides[galleryIndex - 1].style.display = "block";
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[galleryIndex - 1].classList.add("active");
+
+    setTimeout(showGallerySlides, 4000); // Change image every 4 seconds
+}
+
+/* Manual navigation */
+function changeGallerySlide(n) {
+    galleryIndex += n;
+    let slides = document.querySelectorAll(".gallery-slide");
+    if (galleryIndex > slides.length) { galleryIndex = 1; }
+    if (galleryIndex < 1) { galleryIndex = slides.length; }
+    updateGallerySlides();
+}
+
+/* Jump to specific slide */
+function currentGallerySlide(n) {
+    galleryIndex = n;
+    updateGallerySlides();
+}
+
+/* Update slides based on manual selection */
+function updateGallerySlides() {
+    let slides = document.querySelectorAll(".gallery-slide");
+    let dots = document.querySelectorAll(".dot");
+
+    slides.forEach(slide => slide.style.display = "none");
+    slides[galleryIndex - 1].style.display = "block";
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[galleryIndex - 1].classList.add("active");
+}
