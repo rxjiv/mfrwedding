@@ -112,7 +112,7 @@ box-sizing: border-box; /* Ensures padding doesn't cause overflow */
 }
 
 .revealButton:hover {
-    background-color: #d94e3e;
+    background-color: #9b0000;
 }
 /* Hide main content initially */
 #websiteContent {
