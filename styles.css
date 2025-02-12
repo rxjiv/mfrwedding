@@ -72,6 +72,10 @@ box-sizing: border-box; /* Ensures padding doesn't cause overflow */
     text-transform: uppercase;
 }
 
+.hello-box h3 {
+    color: #333;
+}
+
 /* Subheading styling */
 .hello-box p {
     font-family: 'Playfair Display', serif;
@@ -80,6 +84,8 @@ box-sizing: border-box; /* Ensures padding doesn't cause overflow */
     margin: 5px 0;
 }
 
+
+
 /* Wedding Date */
 .hello-box .wedding-date {
     font-size: 1rem;
@@ -87,7 +93,7 @@ box-sizing: border-box; /* Ensures padding doesn't cause overflow */
     color: #666;
 }
 
-/* Centering the Reveal Button at the bottom */
+/* Centered Reveal Button */
 .revealButton {
     width: 50px;
     height: 50px;
@@ -100,11 +106,7 @@ box-sizing: border-box; /* Ensures padding doesn't cause overflow */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: -250px;
-    /* Move the button slightly outside the box */
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 20px auto 0;
     transition: background-color 0.3s;
 }
 
@@ -319,7 +321,7 @@ color: #9b0000;
     font-size: 1.3rem; /* Adjust font size for readability */
     line-height: 1; /* Improve line spacing */
     color: white; /* Keep text readable on any background */
-    padding: 20px; /* Add space around text */
+    padding: 0px; /* Add space around text */
     border-radius: 10px; /* Keep soft edges */
     box-shadow: none; /* Remove shadow */
     background: none; /* Remove background */
