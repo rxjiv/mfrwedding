@@ -35,9 +35,34 @@ function checkPassword() {
         alert("Incorrect password. Try again.");
     }
 }
+function toggleMenu() {
+    let menu = document.getElementById("nav-menu");
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
 
+// Close menu when clicking a link
+function closeMenu() {
+    let menu = document.getElementById("nav-menu");
+    menu.style.display = "none";
+}
+window.addEventListener("scroll", function () {
+    let button = document.getElementById("hamburgerMenu");
+    let scrollY = window.scrollY; // Get how much user has scrolled
 
+    // Adjust the button position dynamically
+    button.style.bottom = `${20 - scrollY}px`;
+});
+window.addEventListener("scroll", function () {
+    let button1 = document.getElementById("nav-menu");
+    let scrollY1 = window.scrollY; // Get how much user has scrolled
 
+    // Adjust the button position dynamically
+    button1.style.bottom = `${85 - scrollY1}px`;
+});
 
 function handleEnterKey(event) {
     if (event.key === "Enter") {

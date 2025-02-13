@@ -31,20 +31,25 @@
         </div>
 
         </div>
-    
 <header>
-    <br>
     <h1>AVINANDA & ARNAB</h1>
-    <br>
-    <nav>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav id="nav-menu">
         <a onclick="showSection('welcome')">WELCOME</a>
         <a onclick="showSection('our-story')">OUR STORY</a>
-        <a onclick="showSection('gallery')">GALLERY</a> <!-- NEW: Gallery Link -->
+        <a onclick="showSection('gallery')">GALLERY</a>
         <a onclick="showSection('events')">EVENTS</a>
         <a onclick="showSection('itinerary')">TRAVEL</a>
         <a onclick="showSection('rsvp')">RSVP</a>
     </nav>
+
+    <!-- MOBILE HAMBURGER MENU BUTTON -->
+    <button id="hamburgerMenu" onclick="toggleMenu()">☰</button>
 </header>
+
+
+
 
     
         <section id="welcome" class="active" style="display: none;">

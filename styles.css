@@ -199,13 +199,12 @@ background-color: rgba(0, 0, 0, 0.6); /* Optional: add a semi-transparent backgr
 z-index: 1000; /* Ensure it stays on top of other content */
 padding: 10px 0;
 }
+/* Hide menu on mobile by default */
 nav {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-  }
-  
+}
 
 nav a {
 text-decoration: none;
@@ -214,9 +213,75 @@ color: white;
 cursor: pointer;
 }
 
+/* Default: Show nav normally on desktop */
+#nav-menu {
+    display: flex;
+    /* Ensures it's visible in desktop */
+    justify-content: center;
+    gap: 20px;
+}
 
+/* Hide hamburger menu on desktop */
+@media screen and (min-width: 769px) {
+    #hamburgerMenu {
+        display: none !important;
+    }
+}   
+@media screen and (max-width: 768px) {
 
-/* Main Content */
+    /* Hamburger Button - Stays Fixed at Bottom Left */
+    #hamburgerMenu {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: #9b0000;
+        color: white;
+        font-size: 20px;
+        padding: 8px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+    }
+
+    /* Mobile Menu - Stays Above the Button */
+    #nav-menu {
+        display: none;
+        /* Initially hidden */
+        flex-direction: column;
+        position: fixed;
+        bottom: 80px;
+        /* Keeps it ABOVE the button */
+        left: 20px;
+        width: 180px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 10px;
+        text-align: left;
+        z-index: 1000;
+        border-radius: 5px;
+    }
+
+    /* Make Menu Follow the Button */
+    .menu-open #nav-menu {
+        display: flex;
+        /* Show menu when open */
+    }
+
+    /* Menu Items */
+    #nav-menu a {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        text-align: left;
+    }
+}
 /* Main Content */
 #websiteContent {
 display: flex;
@@ -652,7 +717,7 @@ button {
     text-align: center;
 }
 button:hover {
-    background-color: #e65c50;
+    background-color: #9b0000;
 }
 
 /* Adjust button width for smaller screens */
