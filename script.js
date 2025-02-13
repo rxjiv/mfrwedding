@@ -49,6 +49,13 @@ function closeMenu() {
     let menu = document.getElementById("nav-menu");
     menu.style.display = "none";
 }
+// Ensure menu closes when clicking a section link
+document.addEventListener("DOMContentLoaded", function () {
+    let menuItems = document.querySelectorAll("#nav-menu a"); // Target only mobile menu items
+    menuItems.forEach(item => {
+        item.addEventListener("click", closeMenu);
+    });
+});
 window.addEventListener("scroll", function () {
     let button = document.getElementById("hamburgerMenu");
     let scrollY = window.scrollY; // Get how much user has scrolled

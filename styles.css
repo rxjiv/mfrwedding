@@ -229,58 +229,51 @@ cursor: pointer;
 }   
 @media screen and (max-width: 768px) {
 
-    /* Hamburger Button - Stays Fixed at Bottom Left */
-    #hamburgerMenu {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        background: #9b0000;
-        color: white;
-        font-size: 20px;
-        padding: 8px;
-        cursor: pointer;
-        border-radius: 5px;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1001;
-    }
+/* Ensure button stays at the bottom */
+#hamburgerMenu {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #9b0000;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
-    /* Mobile Menu - Stays Above the Button */
-    #nav-menu {
-        display: none;
-        /* Initially hidden */
-        flex-direction: column;
-        position: fixed;
-        bottom: 80px;
-        /* Keeps it ABOVE the button */
-        left: 20px;
-        width: 180px;
-        background: rgba(0, 0, 0, 0.9);
-        padding: 10px;
-        text-align: left;
-        z-index: 1000;
-        border-radius: 5px;
-    }
+/* Keep the menu above the button and allow it to move with scroll */
+#nav-menu {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    position: fixed;
+    bottom: 80px; /* Start slightly above the button */
+    left: 20px;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    text-align: left;
+    z-index: 999;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
 
-    /* Make Menu Follow the Button */
-    .menu-open #nav-menu {
-        display: flex;
-        /* Show menu when open */
-    }
+/* Make sure links are visible */
+#nav-menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
 
-    /* Menu Items */
-    #nav-menu a {
-        display: block;
-        width: 100%;
-        padding: 12px;
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        text-align: left;
-    }
 }
 /* Main Content */
 #websiteContent {
