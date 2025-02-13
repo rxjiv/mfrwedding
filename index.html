@@ -164,7 +164,7 @@
         We kindly ask that only one person from your party or family submits an RSVP on behalf of everyone attending. Please include the names of all guests in your group below to ensure we have an accurate guest list.
     </p>
 
-    <form onsubmit="sendEmail(event)">
+    <form id="rsvp-form" onsubmit="sendEmail(event)">
         <!-- Attendance Question -->
          <br>
         <label for="attendance"><h3>Will you be attending?</h3></label>
@@ -275,10 +275,13 @@
 
     </div>
     <!-- Load EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-    emailjs.init("IVJxwsFAz60sp9qjo"); // Replace with your EmailJS Public Key
+    document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init("IVJxwsFAz60sp9qjo"); // Replace with actual Public Key
+    });
 </script>
+
     <script src="script.js"></script>
 
 </body>

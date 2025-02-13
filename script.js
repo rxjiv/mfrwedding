@@ -46,16 +46,57 @@ function handleEnterKey(event) {
 }
 
 function sendEmail(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevents page refresh
 
-    emailjs.sendForm("service_90c6i3h", "template_1a74b59", event.target)
-        .then(function () {
-            alert("RSVP Submitted Successfully!");
-            event.target.reset(); // Clear form
-        }, function () {
-            alert("Failed to send RSVP. Please try again.");
+    const attendanceValue = document.querySelector('input[name="attendance"]:checked')?.value || "Not Provided";
+    let attendanceColor = "black"; // Default color
+
+    if (attendanceValue.toLowerCase() === "yes") {
+        attendanceColor = "green";
+    } else if (attendanceValue.toLowerCase() === "no") {
+        attendanceColor = "red";
+    }
+
+    const formData = {
+        attendance: attendanceValue,
+        attendance_color: attendanceColor,  // Sending the color as a variable
+        guest_names: document.getElementById("guest-names")?.value || "Not Provided",
+        email: document.getElementById("email")?.value || "Not Provided",
+        special_notes: document.getElementById("special-notes")?.value || "Not Provided"
+    };
+
+    console.log("Form Data Sent to EmailJS:", formData); // Debugging
+
+    fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            service_id: "service_90c6i3h",
+            template_id: "template_1a74b59",
+            user_id: "IVJxwsFAz60sp9qjo",
+            template_params: formData
+        })
+    })
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            }
+            throw new Error("EmailJS Error: " + response.statusText);
+        })
+        .then(result => {
+            console.log("Email Sent Successfully:", result);
+            alert("✅ RSVP Submitted Successfully!");
+            document.getElementById("rsvp-form").reset();
+        })
+        .catch(error => {
+            console.error("EmailJS Error:", error);
+            alert("❌ Failed to send RSVP. Please try again.");
         });
 }
+
+
 
 function showSection(sectionId) {
     // Hide all sections

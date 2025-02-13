@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'Rellion';
-    src: url('../fonts/rellion.otf') format('opentype');
+    src: url('fonts/rellion.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -72,7 +72,7 @@ box-sizing: border-box; /* Ensures padding doesn't cause overflow */
 .hello-box h2 {
         font-family: 'Rellion', sans-serif;
     /* Elegant font */
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     letter-spacing: 2px;
     color: #333;
