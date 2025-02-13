@@ -215,20 +215,7 @@ cursor: pointer;
 }
 
 
-/* Center all sections */
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6);
-    /* Darker background */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 60%;
-    display: none;
-}
+
 /* Main Content */
 /* Main Content */
 #websiteContent {
@@ -395,15 +382,21 @@ margin-bottom: 20px;
     text-align: center; /* Center the text within the content */
 }
 
+/* Adjust RSVP width for larger screens */
 #itinerary {
-    width: 80%; /* Make the section take up 80% of the width */
-    max-width: 900px; /* Set max width to avoid being too wide */
-    padding: 40px;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
-    border-radius: 10px; /* Rounded corners */
-    text-align: center;
-    color: white;
-    margin: 40px auto; /* Center the section horizontally with space around it */
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    /* Allow more space */
+    max-width: 700px;
+    /* Keep it readable */
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 #itinerary h2 {
@@ -417,7 +410,6 @@ margin-bottom: 20px;
     color: #ccc; /* Light gray for the text */
     margin-bottom: 20px; /* Add space after each paragraph */
     line-height: 1.6; /* Line height for better readability */
-    padding: 0 20px; /* Add padding inside for spacing */
 }
 
 #itinerary .highlight {
@@ -481,7 +473,6 @@ display: block !important;
 opacity: 1 !important;
 visibility: visible !important;
 height: auto !important;
-padding: 20px;
 }
 
 
@@ -501,6 +492,17 @@ p {
     color: #ccc;
 }
 
+/* Style for the Welcome Section */
+#events {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 900px;
+}
 /* Styling for the events section */
 #events h2 {
 font-size: 2.5rem;
@@ -577,58 +579,111 @@ color: #9b0000;
 margin-top: 15px;
 }
 
-/* Styling for the RSVP form */
+/* Adjust RSVP width for larger screens */
 #rsvp {
-    display: none; /* Initially hidden */
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60%; /* Control the width like the "Pack Your Bags!" section */
-    margin: 40px auto; /* Center it with space above and below */
+    width: 80%;
+    /* Allow more space */
+    max-width: 700px;
+    /* Keep it readable */
+    margin: 40px auto;
     padding: 30px;
-    background: rgba(0, 0, 0, 0.6); /* Similar semi-transparent background */
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Make the RSVP section take full width on small screens */
+@media (max-width: 768px) {
+    #rsvp {
+        width: 95%;
+        /* Full width on mobile */
+        padding: 20px;
+        /* Reduce padding for better spacing */
+    }
+}
+
+/* Increase text size for readability */
 #rsvp h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #9b0000;
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* Form styling */
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
+    /* Adjust max width */
 }
 
-input, textarea {
+/* Make inputs and textareas wider */
+input,
+textarea {
     width: 100%;
-    padding: 10px;
+    max-width: 100%;
+    /* Use full width */
+    padding: 12px;
     border-radius: 5px;
     border: none;
+    font-size: 1.1rem;
 }
 
+/* Make the button centered and responsive */
 button {
     background-color: #9b0000;
     color: white;
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    /* Prevent button from being too wide */
+    text-align: center;
 }
-
 button:hover {
     background-color: #e65c50;
 }
 
+/* Adjust button width for smaller screens */
+@media (max-width: 768px) {
+    button {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+}
 
+/* Radio button styling */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    /* Stack radio buttons */
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    /* Keep the buttons small */
+}
+
+/* Fix radio button spacing */
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
 
 #room-details {
@@ -750,6 +805,7 @@ margin-top: 10px; /* Small space above the button */
 #gallery {
     width: 100%;
     max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.6);
     /* Smaller width */
     margin: 40px auto;
     text-align: center;
