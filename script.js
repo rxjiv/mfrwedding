@@ -45,13 +45,18 @@ function toggleMenu() {
 }
 
 // Close menu when clicking a link
+// Close menu when clicking a mobile menu item, but not the desktop menu
 function closeMenu() {
     let menu = document.getElementById("nav-menu");
-    menu.style.display = "none";
+    let isMobile = window.innerWidth <= 768; // Detect if it's mobile
+
+    if (isMobile) {
+        menu.style.display = "none"; // Only hide if on mobile
+    }
 }
-// Ensure menu closes when clicking a section link
+// Ensure menu closes when clicking a section link (only for mobile)
 document.addEventListener("DOMContentLoaded", function () {
-    let menuItems = document.querySelectorAll("#nav-menu a"); // Target only mobile menu items
+    let menuItems = document.querySelectorAll("#nav-menu a");
     menuItems.forEach(item => {
         item.addEventListener("click", closeMenu);
     });
