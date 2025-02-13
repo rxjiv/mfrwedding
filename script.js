@@ -164,7 +164,7 @@ function showGallerySlides() {
     dots.forEach(dot => dot.classList.remove("active"));
     dots[galleryIndex - 1].classList.add("active");
 
-    setTimeout(showGallerySlides, 4000); // Change image every 4 seconds
+    setTimeout(showGallerySlides, 5000); // Change image every 5 seconds
 }
 
 /* Manual navigation */
