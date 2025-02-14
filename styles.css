@@ -20,7 +20,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
-background: url('pics/cover5bw.jpg') no-repeat center center fixed;
+background: url('pics/cover3.jpg') no-repeat center center fixed;
 background-size: cover;
 color: white;
     font-family: 'Rellion', sans-serif;text-align: center;
@@ -48,7 +48,7 @@ box-sizing: border-box; /* Ensures padding doesn't cause overflow */
     align-items: center;
     height: 100vh;
     width: 100%;
-    background: url('pics/cover3.jpg') no-repeat center center fixed;
+    background: url('pics/cover2.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -233,7 +233,7 @@ cursor: pointer;
 #hamburgerMenu {
     display: flex;
     position: fixed;
-    bottom: 20px;
+    bottom: 70px;
     left: 20px;
     background: #9b0000;
     border: none;
@@ -254,7 +254,7 @@ cursor: pointer;
     display: none; /* Initially hidden */
     flex-direction: column;
     position: fixed;
-    bottom: 80px; /* Start slightly above the button */
+    bottom: 130px; /* Start slightly above the button */
     left: 20px;
     width: 200px;
     background: rgba(0, 0, 0, 0.9);
@@ -323,10 +323,9 @@ margin-bottom: 20px;
 }
 
 .welcome-container {
-    max-width: 800px; /* Limit width for readability */
+    max-width: 1000px; /* Limit width for readability */
     margin: 0 auto; /* Center horizontally */
     text-align: center; /* Center text */
-    padding: 20px; /* Space around content */
 }
 
 /* Add Google Font for Cursive Style */
@@ -356,7 +355,7 @@ max-width: 900px; /* Limit the width of the "Our Story" section */
 margin: 0 auto; /* Centers the section */
 background-color: rgba(0, 0, 0, 0.6);
 border-radius: 10px;
-padding: 20px;
+padding: 30px;
 text-align: center;
 box-sizing: border-box; /* Prevent overflow */
 }
@@ -368,16 +367,14 @@ color: #9b0000;
 }
 
 .story-text {
-    max-width: 800px; /* Limit width for better readability */
-    margin: 0 auto; /* Center horizontally */
-    text-align: center; /* Center the text */
-    font-size: 2rem; /* Adjust font size for readability */
-    line-height: 1; /* Improve line spacing */
-    color: white; /* Keep text readable on any background */
-    padding: 0px; /* Add space around text */
-    border-radius: 10px; /* Keep soft edges */
-    box-shadow: none; /* Remove shadow */
-    background: none; /* Remove background */
+    font-size: 1.3rem;
+        /* Text size for the story section */
+        color: #ccc;
+        /* Light gray for the text */
+        margin-bottom: 20px;
+        /* Add space after each paragraph */
+        line-height: 1.6;
+        /* Line height for better readability */
 }
 
 
@@ -409,10 +406,10 @@ max-width: 100%; /* Allow it to stretch on smaller screens */
 }
 
 .story-text {
-max-width: 100%; /* Ensure text does not overflow */
+    max-width: 100%;
+    /* Ensure text does not overflow */
 }
 }
-
 
 /* Adjusting font size and margins for readability */
 .story-text p {
@@ -591,9 +588,14 @@ margin-left: 20px; /* Adds spacing between date and event name */
 
 /* Optional: Style for the 'Full Details to Follow' text */
 .story-text {
-font-size: 1.4rem;
-color: #ccc;
-margin-top: 20px;
+    font-size: 1.3rem;
+        /* Text size for the story section */
+        color: #ccc;
+        /* Light gray for the text */
+        margin-bottom: 20px;
+        /* Add space after each paragraph */
+        line-height: 1.6;
+        /* Line height for better readability */
 }
 
 #book-here {
