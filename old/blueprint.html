@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        /* Universal Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Keep the same background for everything */
+       body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: url('https://i.imgur.com/mgGeRsk.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Cursive', sans-serif;
+    text-align: center;
+    backdrop-filter: blur(0px); /* Add blur effect to the background */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+/* Make the content responsive and center it */
+#websiteContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    max-width: 1200px; /* Limit the maximum width of the content */
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+}
+
+
+        /* Center the Hello Page */
+        #helloPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Hello Text */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        /* Circular Button */
+        .revealButton {
+            width: 60px;
+            height: 60px;
+            background-color: #9b0000;
+            border: none;
+            border-radius: 50%;
+            font-size: 25px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .revealButton:hover {
+            background-color: #9b0000;
+        }
+
+        /* Hide main content initially */
+        #websiteContent {
+            display: none;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Password Overlay */
+        #passwordOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease, visibility 0s 0.5s;
+            z-index: 1000;
+            /* Ensure overlay is on top of other elements */
+        }
+
+        #passwordBox {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: black;
+            z-index: 1001;
+            /* Ensure input box is above the overlay */
+        }
+
+        #passwordInput {
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+       /* Fixed Navbar */
+header {
+    width: 100%;
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Optional: add a semi-transparent background */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+        /* Center all sections */
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            /* Darker background */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            display: none;
+        }
+/* Main Content */
+/* Main Content */
+#websiteContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 150px; /* Increase top padding for overall space */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Style for the Welcome Section */
+#welcome {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 900px;
+}
+
+#welcome h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #9b0000;
+}
+
+/* Welcome Text Styling */
+.welcome-text {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Date Styling */
+.welcome-date {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Add Google Font for Cursive Style */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* Couple's Name Styling */
+.couple-names {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 75px;
+    margin-bottom: 0px;
+}
+
+
+/* Welcome Message Styling */
+.welcome-message {
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 100px;
+}
+
+
+section {
+    margin-top: 60px; /* Adds consistent margin to push down each section */
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+/* Style for the 'Our Story' section */
+#our-story {
+    width: 100%;
+    max-width: 900px; /* Limit the width of the "Our Story" section */
+    margin: 0 auto; /* Centers the section */
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+#our-story h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #9b0000;
+}
+
+.story-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin: 0 auto;
+    max-width: 900px; /* Prevent text from getting too wide */
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between images */
+    margin-top: 20px;
+    justify-items: center; /* Center the images */
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Maximum width for images */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Optional: Add responsive design */
+@media (max-width: 768px) {
+    .image-gallery {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+
+    #our-story {
+        max-width: 100%; /* Allow it to stretch on smaller screens */
+    }
+
+    .story-text {
+        max-width: 100%; /* Ensure text does not overflow */
+    }
+}
+
+
+    /* Adjusting font size and margins for readability */
+    .story-text p {
+        margin-bottom: 20px;
+    }
+
+        .active {
+            display: flex;
+        }
+
+  /* Container to hold both sidebar and content */
+.itinerary-container {
+    display: flex;
+    align-items: flex-start; /* Aligns sidebar and content */
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+//* Sidebar Styling */
+.itinerary-sidebar {
+    width: 200px; /* Fixed sidebar width */
+    background: rgba(0, 0, 0, 0.6); /* Match the overall theme */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1); /* Softer shadow */
+}
+
+/* Sidebar Links */
+.itinerary-sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #ccc; /* Light gray for readability */
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+/* Hover Effect */
+.itinerary-sidebar a:hover {
+    color: white;
+    background-color: #9b0000; /* Coral hover effect */
+}
+
+
+.itinerary-sidebar a:hover {
+    color: white;
+    background-color: #9b0000;
+    border-radius: 5px;
+}
+
+/* Main Content Styling */
+.itinerary-content section {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    padding: 20px;
+}
+
+
+
+
+/* Individual Sections */
+.itinerary-content section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #9b0000;
+}
+
+
+        p {
+            color: #ccc;
+        }
+
+        /* Styling for the events section */
+#events h2 {
+    font-size: 2.5rem;
+    color: #9b0000;
+    margin-bottom: 20px;
+}
+
+/* Style for each event */
+.event {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+/* Style for the event date (bold and underlined) */
+.event-date {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #9b0000; /* Matching with the theme color */
+    margin-bottom: 5px;
+}
+
+/* Style for the event name */
+.event-name {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-left: 20px; /* Adds spacing between date and event name */
+}
+
+/* Optional: Style for the 'Full Details to Follow' text */
+.story-text {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+#book-here {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#book-here h2 {
+    font-size: 2.5rem;
+    color: #9b0000;
+    margin-bottom: 15px;
+}
+
+#book-here h3 {
+    font-size: 2rem;
+    color: #9b0000;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+#book-here p {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #9b0000;
+    font-weight: bold;
+}
+
+.important-note {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #9b0000;
+    margin-top: 15px;
+}
+
+/* Styling for the RSVP form */
+#rsvp h2 {
+    font-size: 2.5rem;
+    color: #9b0000;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #fff;
+}
+
+input, textarea {
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
+    background-color: #9b0000;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e65c50;
+}
+
+
+
+#room-details {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #ccc;
+}
+
+#room-details h2 {
+    font-size: 2.8rem;
+    color: #9b0000;
+    margin-bottom: 20px;
+}
+
+#room-details h3 {
+    font-size: 2.2rem;
+    color: #9b0000;
+    margin-top: 30px;
+}
+
+#room-details h4 {
+    font-size: 2rem;
+    color: #9b0000;
+    margin-top: 25px;
+}
+
+#room-details h5 {
+    font-size: 1.8rem;
+    color: #9b0000;
+    margin-top: 20px;
+}
+
+.room-category {
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.room-description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li em {
+    font-style: italic;
+}
+
+ul li strong {
+    font-weight: bold;
+}
+
+.room-category p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+
+        /* RSVP Form Stacked */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px; /* Reduced gap between elements */
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the items horizontally */
+    gap: 15px; /* Space between form fields */
+    max-width: 400px;
+    margin: 0 auto; /* Centers the form horizontally within its parent */
+}
+
+form input[type="text"],
+form input[type="radio"],
+form button {
+    width: 100%;
+    max-width: 300px; /* Optional: limit max width of form elements */
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form .radio-group {
+    display: flex;
+    justify-content: center; /* Centers radio buttons horizontally */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+form input[type="radio"] {
+    width: auto; /* Keeps the radio buttons compact */
+}
+
+form button {
+    width: auto; /* Optional: adjust button to content width */
+    margin-top: 10px; /* Small space above the button */
+}
+
+
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Black screen with "Hello" message -->
+    <div id="helloPage">
+            <!-- <h1>Welcome, to our happily ever after </h1> -->
+           <!--- <p class="welcome-date">04.15.2026 - 04.18.2026</p> -->
+            <p class="couple-names">Avinanda & Arnab Happily Ever After</p>
+
+        <button class="revealButton" onclick="revealWebsite()">></button>
+                    <!-- <p class="welcome-message">We're finally tying the knot! Come celebrate with us, and be a part of our story.</p> -->
+
+    </div>
+
+    <!-- Actual wedding website content hidden initially -->
+    <div id="websiteContent" style="display: none;">
+        <div id="passwordOverlay">
+            <div id="passwordBox">
+                <p>Please enter the password to view the website.</p>
+                <input type="password" id="passwordInput">
+                <button onclick="checkPassword()">Submit</button>
+            </div>
+        </div>
+    
+        <header>
+            <h1>Destination Wedding</h1>
+            <nav>
+                <a onclick="showSection('welcome')">Welcome</a>
+                <a onclick="showSection('our-story')">Our Story</a>
+                <a onclick="showSection('events')">Events</a>
+                <a onclick="showSection('itinerary')">Travel</a>
+                <a onclick="showSection('rsvp')">RSVP</a>
+            </nav>
+        </header>
+    
+    <section id="welcome" class="active" style="display: none;">
+        <h2>Pack Your Bags!</h2>
+        
+        <p class="greeting">Dear Family & Friends:</p>
+        
+        <p class="story-text">
+            We are absolutely thrilled to welcome you to our wedding celebration at Planet
+            Hollywood Cancun, Mexico!
+        </p>
+        
+        <p class="story-text">
+            This website is your go-to guide for all the key details about our wedding, including
+            travel, accommodations, and the booking process for our wedding group.
+        </p>
+        
+        <p class="story-text">
+            To make this experience as seamless and enjoyable as possible, we’ve secured a
+            special group room block just for our friends and family. We’ve also partnered with
+            our amazing travel specialist and wedding planner, Mevy Rim, to assist you with all
+            your travel needs.
+        </p>
+        
+        <p class="story-text">
+            We kindly request all guests to book their accommodations within our coordinated
+            group block. You can easily book your room reservation by selecting the BOOK
+            THIS TRIP tab on this website or by contacting Mevy directly. By securing your
+            room reservation, we will consider it a confirmation of your RSVP to attend the
+            wedding.
+        </p>
+        
+        <p class="story-text">
+            For added convenience, we’ve arranged special rates for ground transfers, which
+            you’re welcome to take advantage of. While our travel website also allows you to
+            book flights at published rates (similar to other online platforms), you’re free to
+            book your transfers and flights however you prefer.
+        </p>
+        
+        <p class="story-text">
+            We can’t wait to celebrate with all of you in paradise!
+        </p>
+        
+        <p class="closing">With love,</p>
+        <p class="couple-names">Avi & Arnab</p>
+        
+        <!-- SINGULAR IMAGE-->
+        <div class="image-item">
+            <img src="https://i.imgur.com/e3asWeO.png" alt="Avi & Arnab">
+        </div>
+    </section>
+
+<section id="events" class="active" style="display: none;">
+    <div class="event">
+        <p class="event-date">April 15, 2026</p>
+        <p class="event-name">Sangeet</p>
+    </div>
+    <div class="event">
+        <p class="event-date">April 16, 2026</p>
+        <p class="event-name">Haldi</p>
+    </div>
+    <div class="event">
+        <p class="event-date">April 17, 2026</p>
+        <p class="event-name">Wedding Ceremony</p>
+    </div>
+    <div class="event">
+        <p class="event-date">April 18, 2026</p>
+        <p class="event-name">Wedding Reception</p>
+    </div>
+    <p class="story-text">Full Details to Follow</p>
+</section>
+
+
+
+    
+        <!-- Other sections remain the same -->
+    </div>
+
+<section id="our-story" class="active" style="display: none;">
+        <h2>Its quite funny actually!</h2>
+<p class="story-text">
+    We were from entirely different worlds. We never would have met - if not for our friend-of-a-friend-of-a-friend's random
+    dinner party. A 1 in 87 chance of meeting. Yet it happened.
+    
+    
+    
+    And the rest is history.
+</p>
+
+<!-- IMAGE GALLERY -->
+
+    <div class="image-gallery">
+    <div class="image-item">
+        <img src="https://i.pinimg.com/736x/75/24/56/7524563698b1806895b20689af1f9bc2.jpg"
+            alt="Mike and Mevy Wedding" />
+    </div>
+    <div class="image-item">
+        <img src="https://i.pinimg.com/736x/75/24/56/7524563698b1806895b20689af1f9bc2.jpg"
+            alt="Mike and Mevy Adventure" />
+    </div>
+    <div class="image-item">
+        <img src="https://i.pinimg.com/736x/75/24/56/7524563698b1806895b20689af1f9bc2.jpg" alt="Destination Wedding" />
+    </div>
+    <div class="image-item">
+        <img src="https://i.pinimg.com/736x/75/24/56/7524563698b1806895b20689af1f9bc2.jpg"
+            alt="Mike and Mevy Together" />
+    </div>
+</div>
+</section>
+
+
+<section id="rsvp">
+    <h2>RSVP Form</h2>
+    <br>
+    <form onsubmit="sendEmail(event)">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="attendance-message">Will you be attending? Please let us know:</label>
+        <textarea id="attendance-message" name="attendance-message" rows="4" placeholder="Type your response here..."
+            required></textarea>
+
+        <button type="submit">Submit RSVP</button>
+    </form>
+</section>
+
+
+        <!-- Itinerary Section with Sidebar Navigation -->
+        <section id="itinerary">
+            <div class="itinerary-container">
+
+                <!-- Sidebar for itinerary links -->
+                <aside class="itinerary-sidebar">
+                    <a href="javascript:void(0)" onclick="scrollToItinerary('book-here')">Group Booking Details</a>
+                    <a href="javascript:void(0)" onclick="scrollToItinerary('room-reservation')">Room Reservation</a>
+                    <a href="javascript:void(0)" onclick="scrollToItinerary('room-details')">Room Details</a>
+                </aside>
+        
+                <!-- Content Section -->
+                <div class="itinerary-content">
+                    <section id="book-here">
+                        <h2>Group Booking Details</h2>
+                    
+                        <p class="booking-intro"><strong>Please carefully review the following details and instructions before booking your
+                                room reservation:</strong></p>
+                    
+                        <p><strong>Resort Policy:</strong> All room reservations for our wedding group MUST be booked within our coordinated
+                            group block—either directly on this website or with Mevy.</p>
+                    
+                        <p><strong>Stay Duration:</strong> We have secured rooms for our guests from <span class="highlight">April 14 to
+                                April 19, 2026</span>. A minimum of <span class="highlight">four (4) nights</span> is required.</p>
+                    
+                        <p><strong>Extended Stays:</strong> You are welcome to start your vacation earlier or extend your stay using our
+                            special group rates. For assistance, please contact Mevy directly.</p>
+                    
+                        <h3>Room Categories and Availability</h3>
+                        <p>We have reserved a limited number of rooms in select categories. To secure your first preference, we recommend
+                            booking as soon as possible. Please visit the <strong>ABOUT</strong> tab for room categories and pricing.</p>
+                    
+                        <p class="important-note"><strong>Note:</strong> Single occupancy rooms cannot be booked through this website. For
+                            single room reservations, please contact Mevy directly.</p>
+                    
+                        <h3>Deposit and RSVP Confirmation</h3>
+                        <p>A <span class="highlight">$100 non-refundable deposit per room</span> is required to secure your reservation and
+                            RSVP to the wedding. By securing your room reservation, we will consider it a confirmation of your RSVP.</p>
+                    
+                        <h3>Payment Deadlines and Cancellation Policy</h3>
+                        <p><strong>Final payments are due by <span class="highlight">September 1, 2025</span>.</strong></p>
+                        <p>Cancellations made on or after <span class="highlight">September 1, 2025</span>, will be non-refundable.</p>
+                    
+                        <h3>Resort Booking Policy</h3>
+                        <p>Once the group is within <span class="highlight">45 (60) days</span> of travel, no room changes will be
+                            permitted, including name changes, adding guests, or modifying reservations.</p>
+                        <p>Reductions in the number of nights are not allowed after the final payment has been made.</p>
+                    
+                        <h3>Flights</h3>
+                        <p>Flights will be available starting mid-April. You can book them directly through this website, make arrangements
+                            on your own, or have Mevy assist you with the process.</p>
+                    </section>
+        
+                    <section id="room-reservation">
+                        <h2>Your Room Reservation</h2>
+                    
+                        <p class="reservation-intro"><strong>Please follow these simple steps to book your stay:</strong></p>
+                    
+                        <p class="important-note"><strong>📌 Important:</strong> Please use a <span class="highlight">computer/laptop</span>
+                            instead of a mobile device for a smooth booking experience.</p>
+                    
+                        <h3>Step 1: Please <span class="highlight">CLICK HERE</span> To Book A Flight</h3>
+                    
+                        <h3>Step 2: Choose Your Options</h3>
+                        <ul>
+                            <li><strong>Select your Dates</strong> and <strong>Room Category</strong></li>
+                            <li><strong>Add Airport Transfers (optional):</strong> We have arranged <span class="highlight">Private Shared
+                                    Transfers</span> exclusively for our wedding group. This ensures that only our wedding guests will be
+                                traveling together between the airport and resort.</li>
+                        </ul>
+                    
+                        <h3>Step 3: Finalize Your Reservation</h3>
+                        <p>To confirm your booking, make sure to complete your reservation by applying a <span class="highlight">$100 per
+                                room deposit</span> at the final step. This deposit is required to <strong>secure your room</strong> and
+                            validate your reservation.</p>
+                    
+                        <h3>Step 4: Manage Your Payments</h3>
+                        <p>After creating an account on the booking website, you’ll have the flexibility to <strong>return anytime</strong>
+                            to make payments of any amount until the final balance is due.</p>
+                    
+                        <p class="important-note"><strong>⚠️ Important:</strong> Ensure you complete all steps to finalize your reservation.
+                            <span class="highlight">Incomplete bookings will not be valid.</span></p>
+                    
+                        <p><strong>Need assistance?</strong> If you have any questions, please contact Mevy directly by going to the <span
+                                class="highlight">CONTACT</span> tab.</p>
+                    </section>
+        
+                    <section id="room-details">
+                        <h2>ROOM DETAILS</h2>
+                    
+                        <h3>Category & Pricing</h3>
+                    
+                        <!-- Junior Suite -->
+                        <div class="room-category">
+                            <h4>JUNIOR SUITE</h4>
+                            <p class="room-description">Sleep like a star and recharge for another day in paradise in this fabulous suite.
+                                Relax on your custom-made PHabulous Bed™ and watch the big screen, or mix up a drink from your minibar,
+                                relax in the seating area, and scroll through your incredible photos. Enjoy a private balcony or terrace.
+                            </p>
+                    
+                            <h5><strong>Adult Rates (Price per adult per night):</strong></h5>
+                            <ul>
+                                <li>Single Occupancy: $337</li>
+                                <li>Double Occupancy: $225</li>
+                                <li>Triple Occupancy: $206</li>
+                                <li>Quad Occupancy: $197</li>
+                            </ul>
+                            <p><em>*For Single Occupant, please contact Mevy directly to book your room.</em></p>
+                    
+                            <h5><strong>Children Rates (Price per child/teen per night):</strong></h5>
+                            <ul>
+                                <li>1st Child (ages 2-12): $113</li>
+                                <li>2nd Child: $113</li>
+                                <li>1st Teen (ages 13-17): $113</li>
+                                <li>2nd Teen: $169</li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Junior Suite Ocean View -->
+                        <div class="room-category">
+                            <h4>JUNIOR SUITE OCEAN VIEW</h4>
+                            <p class="room-description">Sleep like a star and recharge for another day in paradise in this fabulous suite.
+                                Relax on your custom-made PHabulous Bed™ and watch the big screen, or mix up a drink from your minibar,
+                                relax in the seating area, and scroll through your incredible photos. Enjoy a private balcony or terrace
+                                with a stunning ocean view.</p>
+                    
+                            <h5><strong>Adult Rates (Price per adult per night):</strong></h5>
+                            <ul>
+                                <li>Single Occupancy: $379</li>
+                                <li>Double Occupancy: $253</li>
+                                <li>Triple Occupancy: $232</li>
+                                <li>Quad Occupancy: $221</li>
+                            </ul>
+                            <p><em>*For Single Occupant, please contact Mevy directly to book your room.</em></p>
+                    
+                            <h5><strong>Children Rates (Price per child/teen per night):</strong></h5>
+                            <ul>
+                                <li>1st Child (ages 2-12): $127</li>
+                                <li>2nd Child: $127</li>
+                                <li>1st Teen (ages 13-17): $127</li>
+                                <li>2nd Teen: $190</li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Entourage Suite -->
+                        <div class="room-category">
+                            <h4>ENTOURAGE SUITE</h4>
+                            <p class="room-description">Every star comes with an entourage. This stylish suite is outfitted with everything
+                                you need to Vacation Like a Star™ and share the spotlight with those you love. From the king-size PHabulous
+                                Bed™ to stylish seating space with a comfortable sofa bed, this suite offers a perfect mix of privacy and
+                                space. When it’s time for your beauty sleep, simply slide the door closed to create two separate areas —
+                                each with its own big screen.</p>
+                    
+                            <h5><strong>Adult Rates (Price per adult per night, max of 3 adults allowed):</strong></h5>
+                            <ul>
+                                <li>Single Occupancy: $662</li>
+                                <li>Double Occupancy: $331</li>
+                                <li>Triple Occupancy: $304</li>
+                            </ul>
+                            <p><em>*For Single Occupant, please contact Mevy directly to book your room.</em></p>
+                    
+                            <h5><strong>Children Rates (Price per child/teen per night):</strong></h5>
+                            <ul>
+                                <li>1st Child (ages 2-12): Free</li>
+                                <li>2nd Child: $166</li>
+                                <li>1st Teen (ages 13-17): Free</li>
+                                <li>2nd Teen: $249</li>
+                            </ul>
+                        </div>
+                    </section>
+
+    </div>
+
+</body>
+
+</html>

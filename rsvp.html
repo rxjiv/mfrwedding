@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="styles.css">
+        <script>
+            // Redirect if user is not authenticated
+            if (!sessionStorage.getItem("authenticated")) {
+                window.location.href = "index.html"; // Send user back to login page
+            }
+        </script>
+</head>
+
+<body class="rsvp-body">
+
+    <header class="navbar">
+        <h1>
+            AVIANDA & ARNAB
+        </h1>
+    <ul>
+        <li><a href="welcome.html">WELCOME</a></li>
+        <li><a href="ourstory.html">OUR STORY</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="travel.html">TRAVEL</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+
+    </ul>
+</header>
+
+    <div class="center-box">
+        <h2>RSVP</h2>
+        <p class="story-text">
+            To confirm your attendance, please submit your RSVP and secure your room reservation within our coordinated group block with the required minimal deposit.
+        </p>
+        
+        <p class="story-text">
+            Once you RSVP here, kindly follow the instructions on our travel website (link available under the TRAVEL tab) to book your room and ensure your place in our special celebration.
+        </p>
+        
+        <p class="story-text">
+            We kindly ask that only one person from your party or family submits an RSVP on behalf of everyone attending. Please include the names of all guests in your group to help us keep an accurate guest list.
+        </p>
+    
+        <p class="story-text">
+            We can’t wait to celebrate with you in paradise! 
+        </p>
+    
+        <form id="rsvp-form" onsubmit="sendEmail(event)">
+            <!-- Attendance Question -->
+             <br>
+            <label for="attendance"><h3>Will you be attending?</h3></label>
+            <div class="radio-group">
+        <div class="radio-option">
+            <input type="radio" id="yes" name="attendance" value="Yes" required>
+            <label for="yes">Yes! Can’t wait for an unforgettable celebration with you two!</label>
+        </div>
+        <div class="radio-option">
+            <input type="radio" id="no" name="attendance" value="No">
+            <label for="no">Regretfully unable to attend. Wishing you both the best!</label>
+        </div>
+    </div>
+    
+    
+            <!-- First and Last Name -->
+            <label for="guest-names">First and Last Name (please include your name and everyone’s in your party/family):</label>
+            <textarea id="guest-names" name="guest-names" rows="3" placeholder="" required></textarea>
+    
+            <!-- Email to stay in contact -->
+            <label for="email">Email (we recommend using the same email for your room travel reservation):</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+            <!-- Special Notes -->
+            <label for="special-notes">Notes/Message:</label>
+            <textarea id="special-notes" name="special-notes" rows="3" placeholder=""></textarea>
+    
+            <!-- Submit Button -->
+            <button type="submit">Submit RSVP</button>
+        </form>        </div>
+    </div>
+
+    
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

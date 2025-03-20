@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="styles.css">
+        <script>
+            // Redirect if user is not authenticated
+            if (!sessionStorage.getItem("authenticated")) {
+                window.location.href = "index.html"; // Send user back to login page
+            }
+        </script>
+</head>
+
+<body class="events-body">
+
+    <header class="navbar">
+        <h1>
+            AVIANDA & ARNAB
+        </h1>
+    <ul>
+        <li><a href="welcome.html">WELCOME</a></li>
+        <li><a href="ourstory.html">OUR STORY</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="travel.html">TRAVEL</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+
+    </ul>
+</header>
+
+    <div class="center-box">
+        <div class="event">
+            <p class="event-date">SANGEET</p>
+            <p class="event-name">APRIL 15, 2026</p>
+        </div>
+        <div class="event">
+            <p class="event-date">GUYE HOLUD</p>
+            <p class="event-name">APRIL 16, 2026</p>
+        </div>
+        <div class="event">
+            <p class="event-date">WEDDING CEREMONY</p>
+            <p class="event-name">APRIL 17, 2026</p>
+        </div>
+        <div class="event">
+            <p class="event-date">WEDDING RECEPTION</p>
+            <p class="event-name">APRIL 18, 2026</p>
+        </div>
+        <p class="story-text">Full Details to Follow</p>        </div>
+    </div>
+
+    
+
+</body>
+
+</html>

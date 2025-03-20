@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="styles.css">
+        <script>
+            // Redirect if user is not authenticated
+            if (!sessionStorage.getItem("authenticated")) {
+                window.location.href = "index.html"; // Send user back to login page
+            }
+        </script>
+</head>
+
+<body class="welcome-body">
+
+    <header class="navbar">
+            <h1>
+                AVIANDA & ARNAB
+            </h1>
+        <ul>
+            <li><a href="welcome.html">WELCOME</a></li>
+            <li><a href="ourstory.html">OUR STORY</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="events.html">EVENTS</a></li>
+            <li><a href="travel.html">TRAVEL</a></li>
+            <li><a href="rsvp.html">RSVP</a></li>
+
+        </ul>
+    </header>
+
+    <div class="center-box">
+        <h2>WELCOME</h2>
+
+        <p class="story-text">Dear Friends & Family,</p>
+    
+        <p class="story-text">
+            Welcome to our wedding website!
+        </p>
+    
+        <p class="story-text">
+            We are so incredibly grateful for your love and support and can't wait to celebrate this special moment with
+            you!
+        </p>
+    
+        <p class="story-text">
+            Join us in beautiful Cancun from April 15 to April 18, 2026, as we celebrate not just our wedding, but an
+            unforgettable experience with our closest family and friends.
+        </p>
+    
+        <p class="story-text">
+            Your presence means the world to us, and we truly appreciate the time and effort you're making to be part of our
+            special day. Get ready for sunshine, laughter, and memories that will last a lifetime!
+        </p>
+    
+        <p class="story-text">
+            We can’t wait to see you there!
+        </p>
+    
+        <!-- SINGULAR IMAGE-->
+        <div class="image-item">
+            <img src="pics/1.jpeg" alt="Avi & Arnab">
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>

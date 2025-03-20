@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Wedding</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to CSS file -->
+</head>
+
+<body>
+    <!-- Black screen with "Hello" message -->
+<div id="helloPage">
+    <div class="hello-box">
+        <br>
+        <h2>Avinanda & Arnab's</h2>
+                <h4>HAPPILY EVER AFTER  </h4>
+        <button class="revealButton" onclick="revealWebsite()">></button>
+    </div>
+</div>
+
+
+    <!-- Actual wedding website content hidden initially -->
+    <div id="websiteContent" style="display: none;">
+        <div id="passwordOverlay">
+            <div id="passwordBox">
+                <p>Please enter the password to view the website.</p>
+                <input type="password" id="passwordInput">
+                <button onclick="checkPassword()">Submit</button>
+            </div>
+        </div>
+
+        </div>
+<header>
+    <h1>AVINANDA & ARNAB</h1>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav id="nav-menu">
+        <a onclick="showSection('welcome')">WELCOME</a>
+        <a onclick="showSection('our-story')">OUR STORY</a>
+        <a onclick="showSection('gallery')">GALLERY</a>
+        <a onclick="showSection('events')">EVENTS</a>
+        <a onclick="showSection('itinerary')">TRAVEL</a>
+        <a onclick="showSection('rsvp')">RSVP</a>
+    </nav>
+
+    <!-- MOBILE HAMBURGER MENU BUTTON -->
+    <button id="hamburgerMenu" onclick="toggleMenu()">☰</button>
+</header>
+
+
+
+
+    
+        <section id="welcome" class="active" style="display: none;">
+            <div class="welcome-container">
+                
+                <p class="story-text">Dear Friends & Family,</p>
+        
+                <p class="story-text">
+                    Welcome to our wedding website!
+                </p>
+                
+                <p class="story-text">
+                    We are so incredibly grateful for your love and support and can't wait to celebrate this special moment with you!
+                </p>
+        
+                <p class="story-text">
+                    Join us in beautiful Cancun from April 15 to April 18, 2026, as we celebrate not just our wedding, but an unforgettable experience with our closest family and friends.
+                </p>
+        
+                <p class="story-text">
+                    Your presence means the world to us, and we truly appreciate the time and effort you're making to be part of our special day. Get ready for sunshine, laughter, and memories that will last a lifetime!
+                </p>
+        
+                <p class="story-text">
+                    We can’t wait to see you there!
+                </p>
+
+                <!-- SINGULAR IMAGE-->
+                <div class="image-item">
+                    <img src="pics/1.jpeg" alt="Avi & Arnab">
+                </div>
+            </div>
+        </section>
+        
+        
+
+<section id="events" class="active" style="display: none;">
+    <div class="event">
+        <p class="event-date">SANGEET</p>
+        <p class="event-name">APRIL 15, 2026</p>
+    </div>
+    <div class="event">
+        <p class="event-date">GUYE HOLUD</p>
+        <p class="event-name">APRIL 16, 2026</p>
+    </div>
+    <div class="event">
+        <p class="event-date">WEDDING CEREMONY</p>
+        <p class="event-name">APRIL 17, 2026</p>
+    </div>
+    <div class="event">
+        <p class="event-date">WEDDING RECEPTION</p>
+        <p class="event-name">APRIL 18, 2026</p>
+    </div>
+    <p class="story-text">Full Details to Follow</p>
+</section>
+
+
+
+    
+        <!-- Other sections remain the same -->
+    </div>
+
+<section id="our-story" class="active" style="display: none;">
+        <h2>OUR STORY</h2>
+        <div class="story-container">
+            <p class="story-text">
+                During a global pandemic when masks were in and social distancing was the norm, our love story sparked with a Teams message. It didn’t take long to realize that no amount of quarantine could keep us apart.
+                <br><br>
+                From dating right away to meeting halfway in Prince Edward County for wine, sunsets, and responsible masking of course, we packed more milestones into eight months than some do in a lifetime. Engagement? Check. Courthouse wedding? Check. Moving to a whole new country together? Double check. Since then, we’ve been building a laughter-filled, slightly chaotic, and incredibly happy life together.
+                <br><br>
+                For years, it’s been an ongoing joke that our wedding was happening “next year”. Well, the wait is officially over! We’re beyond thrilled to celebrate our Hindu wedding and five-year anniversary with all of you in April 2026 in Mexico.
+                <br><br>
+                Thank you for being part of our love story—we can’t wait to eat, dance, and create unforgettable memories together!
+                <br><br>
+                <strong>With Luv, Jutu xoxo</strong>
+            </p>
+        </div>
+        
+
+<!-- IMAGE GALLERY 
+
+    <div class="image-gallery">
+    <div class="image-item">
+        <img src="pics/1.jpeg"
+            alt="..." />
+    </div>
+    <div class="image-item">
+        <img src="pics/2.jpeg"
+            alt="..." />
+    </div>
+    <div class="image-item">
+        <img src="pics/3.jpeg" alt="..." />
+    </div>
+    <div class="image-item">
+        <img src="pics/4.jpeg"
+            alt="..." />
+    </div>
+</div> -->
+</section>
+
+
+<section id="rsvp">
+    <h2>RSVP</h2>
+    <p class="story-text">
+        To confirm your attendance, both your RSVP and room reservation within our coordinated group block are required.
+    </p>
+    
+    <p class="story-text">
+        Once you RSVP here, please follow the instructions on our travel website to book your room and ensure you’re part of our special celebration.
+    </p>
+    
+    <p class="story-text">
+        We can’t wait to celebrate with you in paradise!
+    </p>
+
+    <p class="story-text">
+        We kindly ask that only one person from your party or family submits an RSVP on behalf of everyone attending. Please include the names of all guests in your group below to ensure we have an accurate guest list.
+    </p>
+
+    <form id="rsvp-form" onsubmit="sendEmail(event)">
+        <!-- Attendance Question -->
+         <br>
+        <label for="attendance"><h3>Will you be attending?</h3></label>
+        <div class="radio-group">
+    <div class="radio-option">
+        <input type="radio" id="yes" name="attendance" value="Yes" required>
+        <label for="yes">Yes! Can’t wait for an unforgettable celebration with you two!</label>
+    </div>
+    <div class="radio-option">
+        <input type="radio" id="no" name="attendance" value="No">
+        <label for="no">Regretfully unable to attend. Wishing you both the best!</label>
+    </div>
+</div>
+
+
+        <!-- First and Last Name -->
+        <label for="guest-names">First and Last Name (please include your name and everyone’s in your party/family):</label>
+        <textarea id="guest-names" name="guest-names" rows="3" placeholder="" required></textarea>
+
+        <!-- Email to stay in contact -->
+        <label for="email">Email (we recommend using the same email for your room travel reservation):</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <!-- Special Notes -->
+        <label for="special-notes">Notes/Message:</label>
+        <textarea id="special-notes" name="special-notes" rows="3" placeholder=""></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit RSVP</button>
+    </form>
+</section>
+
+<section id="gallery" class="active" style="display: none;">
+    <h2>GALLERY</h2>
+    
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <div class="gallery-slide fade"><img src="pics/1.jpeg" alt="Gallery Image 1"></div>
+        <div class="gallery-slide fade"><img src="pics/2.jpeg" alt="Gallery Image 2"></div>
+        <div class="gallery-slide fade"><img src="pics/3.jpeg" alt="Gallery Image 3"></div>
+        <div class="gallery-slide fade"><img src="pics/4.jpeg" alt="Gallery Image 4"></div>
+        <div class="gallery-slide fade"><img src="pics/5.jpeg" alt="Gallery Image 5"></div>
+        <div class="gallery-slide fade"><img src="pics/6.jpeg" alt="Gallery Image 6"></div>
+        <div class="gallery-slide fade"><img src="pics/7.jpeg" alt="Gallery Image 7"></div>
+        <div class="gallery-slide fade"><img src="pics/8.jpeg" alt="Gallery Image 8"></div>
+        <div class="gallery-slide fade"><img src="pics/9.jpeg" alt="Gallery Image 9"></div>
+        <div class="gallery-slide fade"><img src="pics/10.jpeg" alt="Gallery Image 10"></div>
+        <div class="gallery-slide fade"><img src="pics/11.jpeg" alt="Gallery Image 11"></div>
+        <div class="gallery-slide fade"><img src="pics/12.jpg" alt="Gallery Image 12"></div>
+        <div class="gallery-slide fade"><img src="pics/13.jpeg" alt="Gallery Image 13"></div>
+        <div class="gallery-slide fade"><img src="pics/14.jpeg" alt="Gallery Image 14"></div>
+        <div class="gallery-slide fade"><img src="pics/15.jpeg" alt="Gallery Image 15"></div>
+        <div class="gallery-slide fade"><img src="pics/16.jpeg" alt="Gallery Image 16"></div>
+        <div class="gallery-slide fade"><img src="pics/17.jpeg" alt="Gallery Image 17"></div>
+        <div class="gallery-slide fade"><img src="pics/18.jpeg" alt="Gallery Image 18"></div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="changeGallerySlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeGallerySlide(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots for navigation -->
+    <div class="dots-container">
+        <span class="dot" onclick="currentGallerySlide(1)"></span>
+        <span class="dot" onclick="currentGallerySlide(2)"></span>
+        <span class="dot" onclick="currentGallerySlide(3)"></span>
+        <span class="dot" onclick="currentGallerySlide(4)"></span>
+        <span class="dot" onclick="currentGallerySlide(5)"></span>
+        <span class="dot" onclick="currentGallerySlide(6)"></span>
+        <span class="dot" onclick="currentGallerySlide(7)"></span>
+        <span class="dot" onclick="currentGallerySlide(8)"></span>
+        <span class="dot" onclick="currentGallerySlide(9)"></span>
+        <span class="dot" onclick="currentGallerySlide(10)"></span>
+        <span class="dot" onclick="currentGallerySlide(11)"></span>
+        <span class="dot" onclick="currentGallerySlide(12)"></span>
+        <span class="dot" onclick="currentGallerySlide(13)"></span>
+        <span class="dot" onclick="currentGallerySlide(14)"></span>
+        <span class="dot" onclick="currentGallerySlide(15)"></span>
+        <span class="dot" onclick="currentGallerySlide(16)"></span>
+        <span class="dot" onclick="currentGallerySlide(17)"></span>
+        <span class="dot" onclick="currentGallerySlide(18)"></span>
+    </div>
+</section>
+
+
+
+
+
+
+
+        <!-- Itinerary Section with Sidebar Navigation -->
+        <section id="itinerary">
+            <div>
+
+            
+        
+                <!-- Content Section -->
+                <div class="itinerary-content">
+                    <section id="travel">
+                        <h2>Pack Your Bags!</h2>
+                
+                        <p class="story-text">
+                            To make your travel experience as smooth and enjoyable as possible, we’ve partnered with our dedicated destination wedding specialist, <strong>Mevy Rim</strong>, who will be available to assist with all your travel needs. We have also secured a special group room block exclusively for our friends and family.
+                        </p>
+                
+                        <p class="story-text">We kindly request all guests to book their room reservations within our coordinated group block through our travel website. Simply click the link below and use the invitation code for full details and instructions.
+                        </p>
+                
+                        <p class="story-text">
+                            (I will send website link later)
+                        </p>
+                
+                        <p class="story-text"><strong>Website Link</strong></p>
+                
+                        <p class="story-text"><strong>Invitation Code:</strong></p>
+                
+                        <p class="story-text">
+                            Please note: By securing your room reservation, we will also consider it confirmation of your RSVP to attend the wedding.
+                        </p>
+                    </section>
+                </div>
+
+    </div>
+    <!-- Load EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init("IVJxwsFAz60sp9qjo"); // Replace with actual Public Key
+    });
+</script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

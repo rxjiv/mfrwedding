@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="styles.css">
+        <script>
+            // Redirect if user is not authenticated
+            if (!sessionStorage.getItem("authenticated")) {
+                window.location.href = "index.html"; // Send user back to login page
+            }
+        </script>
+</head>
+
+<body class="travel-body">
+
+    <header class="navbar">
+        <h1>
+            AVIANDA & ARNAB
+        </h1>
+    <ul>
+        <li><a href="welcome.html">WELCOME</a></li>
+        <li><a href="ourstory.html">OUR STORY</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="travel.html">TRAVEL</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+
+    </ul>
+</header>
+
+    <div class="center-box">
+        <h2>Pack Your Bags!</h2>
+                
+        <p class="story-text">
+            To make your travel experience as smooth and enjoyable as possible, we’ve partnered with our dedicated destination wedding specialist, <strong>Mevy Rim</strong>, who will be available to assist with all your travel needs. We have also secured a special group room block exclusively for our friends and family.
+        </p>
+
+        <p class="story-text">We kindly request all guests to book their room reservations within our coordinated group block through our travel website. Simply click the link below and use the invitation code for full details and instructions.
+        </p>
+
+    
+        <h3><strong>Our Travel Website:</strong></h3>
+        <p class="story-text"><a href="https://www.classicvacations.com/gr/arviforever2026"> https://www.classicvacations.com/gr/arviforever2026</a></p>
+
+        <h3><strong>Invitation Code:</strong></h3>
+        <p class="story-text">aviarnab2026</p>
+
+        <p class="story-text">
+            Please note: By securing your room reservation, we will also consider it confirmation of your RSVP to attend the wedding.
+        </p>        </div>
+    </div>
+
+    
+
+</body>
+
+</html>

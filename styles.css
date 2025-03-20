@@ -1,393 +1,190 @@
  /* Universal Reset */
  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
 
-@font-face {
-    font-family: 'Rellion';
-    src: url('fonts/rellion.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/* Keep the same background for everything */
-body {
-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-background: url('pics/cover3.jpg') no-repeat center center fixed;
-background-size: cover;
-color: white;
-    font-family: 'Rellion', sans-serif;text-align: center;
-backdrop-filter: blur(0px); /* Add blur effect to the background */
-margin: 0;
-padding: 0;
-overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-/* Make the content responsive and center it */
-#websiteContent {
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 100%;
-padding: 20px;
-max-width: 1200px; /* Limit the maximum width of the content */
-box-sizing: border-box; /* Ensures padding doesn't cause overflow */
-}
+ @font-face {
+     font-family: 'Rellion';
+     src: url('fonts/rellion.otf') format('opentype');
+     font-weight: normal;
+     font-style: normal;
+ }
 
 
-/* Centered Hero Section */
-#helloPage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background: url('pics/cover2.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
+ /* Global Styles FOR TABLET AND MOBILE */
 
-/* The elegant rectangular text box */
-.hello-box {
-    background: rgba(255, 255, 255, 0.6);
-    /* Softer semi-transparent white */
-    padding: 30px 0px;
-    border-radius: 5px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    /* Elegant border */
-    text-align: center;
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-    /* Soft shadow */
-    width: 500px;
-    /* More rectangular */
-}
+     /* Tablet */
+        @media (max-width: 1024px) {
+            body {
+                font-size: 16px;
+            }
+    
+            .navbar {
+                flex-direction: column;
+            }
+        }
+    
+    /* Mobile */
 
-/* Styling the heading */
-.hello-box h2 {
-        font-family: 'Rellion', sans-serif;
-    /* Elegant font */
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #333;
-    text-transform: uppercase;
-}
+        @media (max-width: 768px) { 
+             body {
+                background-attachment: scroll;
+                background-size: contain;
+            }
+        
+        }
 
-.hello-box h4 {
-    color: #333;
-        font-size: 1.25rem;
-}
-
-/* Subheading styling */
-.hello-box p {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: #444;
-    margin: 5px 0;
-}
-
-
-
-/* Wedding Date */
-.hello-box .wedding-date {
-    font-size: 1rem;
-    font-weight: normal;
-    color: #666;
-}
-
-/* Centered Reveal Button */
-.revealButton {
-    width: 50px;
-    height: 50px;
-    background-color: #9b0000;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto 0;
-    transition: background-color 0.3s;
-}
-
-.revealButton:hover {
-    background-color: #9b0000;
-}
-/* Hide main content initially */
-#websiteContent {
-    display: none;
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-}
-
-
-
-#passwordOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('pics/cover3.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: visible; /* Keep it visible */
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 1000; /* Ensure it's on top of everything */
-}
-
-#passwordBox {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    color: black;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
-    z-index: 1001; /* Ensure it's above the overlay */
-}
-
-#passwordBox p {
-    color:#000
-}
-
-#passwordInput {
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 200px;
-}
-
-#passwordBox button {
-    background-color: #9b0000;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#passwordBox button:hover {
-    background-color: #9b0000;
-}
-
-
-
-/* Fixed Navbar */
-header {
-display: none;
-width: 100%;
-position: fixed; /* Fix the navbar at the top */
-top: 0;
-left: 0;
-background-color: rgba(0, 0, 0, 0.6); /* Optional: add a semi-transparent background */
-z-index: 1000; /* Ensure it stays on top of other content */
-padding: 10px 0;
-}
-/* Hide menu on mobile by default */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-nav a {
-text-decoration: none;
-font-weight: bold;
-color: white;
-cursor: pointer;
-}
-
-/* Default: Show nav normally on desktop */
-#nav-menu {
-    display: flex;
-    /* Ensures it's visible in desktop */
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Hide hamburger menu on desktop */
-@media screen and (min-width: 769px) {
-    #hamburgerMenu {
-        display: none !important;
-    }
-}   
-@media screen and (max-width: 768px) {
-
-/* Ensure button stays at the bottom */
-#hamburgerMenu {
-    display: flex;
-    position: fixed;
-    bottom: 70px;
-    left: 20px;
-    background: #9b0000;
-    border: none;
-    color: white;
-    font-size: 20px;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 50px;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* Keep the menu above the button and allow it to move with scroll */
-#nav-menu {
-    display: none; /* Initially hidden */
+.navbar ul {
     flex-direction: column;
-    position: fixed;
-    bottom: 130px; /* Start slightly above the button */
-    left: 20px;
-    width: 200px;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 10px;
-    text-align: left;
-    z-index: 999;
-    border-radius: 5px;
-    transition: transform 0.2s ease-in-out;
+    gap: 10px;
+}
+        
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar li {
+        display: block;
+        padding: 10px;
+    }
 }
 
-/* Make sure links are visible */
-#nav-menu a {
-    display: block;
+/* -------- */
+        
+body {
+background: url('pics/cover3.jpg');
+background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+/* NAVIGATION BAR */
+.navbar {
+    padding-bottom: 0;
+    /* Remove extra padding */
+    margin-bottom: 0;
+    /* Remove extra margin */
+    }
+    
+
+.navbar h1 {
+    font-family: 'Rellion', sans-serif;
+    color: white;
+    text-align: center;
+    margin-top: 2rem;;
+    margin-bottom: -0.5rem;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;    
+    text-align: center;
+}
+.navbar li:hover {
+    background-color: #333;
+}
+.navbar li {
+    display: inline;
+    color: white;
     padding: 10px;
+}
+
+.navbar a:visited,
+.navbar a:link {
     color: white;
     text-decoration: none;
-    font-size: 16px;
 }
 
-}
-/* Main Content */
-#websiteContent {
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 100%;
-padding-top: 150px; /* Increase top padding for overall space */
-padding-left: 20px;
-padding-right: 20px;
-padding-bottom: 20px;
-max-width: 1200px;
-box-sizing: border-box;
-margin: 0 auto;
+
+/* PASSWORD STYLING */
+#password-container {
+    margin-top: 20%;
 }
 
-/* Style for the Welcome Section */
-#welcome {
-text-align: center;
-background-color: rgba(0, 0, 0, 0.6);
-border-radius: 10px;
-padding: 40px;
-width: 80%;
-margin: 0 auto;
-box-sizing: border-box;
-max-width: 900px;
-}
-
-#welcome h2 {
-font-size: 2rem;
-margin-bottom: 20px;
-color: #fff;
-}
-
-/* Welcome Text Styling */
-.welcome-text {
-font-size: 1.5rem;
-color: #ccc;
-margin-bottom: 20px;
-}
-
-/* Date Styling */
-.welcome-date {
-font-size: 1.8rem;
-color: #fff;
-margin-bottom: 20px;
-}
-
-.welcome-container {
-    max-width: 1000px; /* Limit width for readability */
-    margin: 0 auto; /* Center horizontally */
-    text-align: center; /* Center text */
-}
-
-/* Add Google Font for Cursive Style */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+.index-body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+/* --------------*/
 
 
-.couple-names {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    font-weight: bold;
+/* REGULAR BOX FOR EACH PAGE */
+.center-box {
+    position: relative;
+    /* Now respects the navbar */
+    width: 90%;
+    /* Adjust width */
+    max-width: 900px;
+    /* Prevents it from getting too wide */
+    margin: 80px auto;
+    /* Push it down below the navbar */
+        margin-top: 30px;
+            /* Adjust based on how much space you need */
+
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background */
     color: white;
+
+    text-align: center;
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+
+    /* Auto height */
+    height: auto;
+    min-height: 100px;
+    /* Optional */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-
-/* Welcome Message Styling */
-.welcome-message {
-font-size: 2rem;
-color: #fff;
-margin-top: 100px;
+.center-box a {
+    word-wrap: break-word; /* Allows long words/URLs to wrap */
+    overflow-wrap: break-word;
+    display: inline-block;
+    max-width: 100%;
 }
-
-
-/* Style for the 'Our Story' section */
-#our-story {
-width: 100%;
-max-width: 900px; /* Limit the width of the "Our Story" section */
-margin: 0 auto; /* Centers the section */
-background-color: rgba(0, 0, 0, 0.6);
-border-radius: 10px;
-padding: 30px;
-text-align: center;
-box-sizing: border-box; /* Prevent overflow */
-}
-
-#our-story h2 {
-font-size: 2.5rem;
-margin-bottom: 20px;
-color: #9b0000;
+/* Ensure it works well on mobile */
+@media (max-width: 768px) {
+    .center-box a {
+        font-size: 1rem; /* Adjust size for readability */
+        word-break: break-word; /* Force break on small screens */
+    }
 }
 
 .story-text {
     font-size: 1.3rem;
-        /* Text size for the story section */
-        color: #ccc;
-        /* Light gray for the text */
-        margin-bottom: 20px;
-        /* Add space after each paragraph */
-        line-height: 1.6;
-        /* Line height for better readability */
+    /* Text size for the story section */
+    color: #ccc;
+    /* Light gray for the text */
+    margin-bottom: 10px;
+    /* Add space after each paragraph */
+    line-height: 1.6;
+    /* Line height for better readability */
 }
 
-
-
-/* Image Gallery */
-.image-gallery {
-display: grid;
-grid-template-columns: repeat(2, 1fr); /* Two columns */
-gap: 20px; /* Space between images */
-margin-top: 20px;
-justify-items: center; /* Center the images */
+.story-text a:hover {
+    color: #9b0000;
+    text-decoration: underline;
+    /* Underline on hover */
 }
+.story-text a:visited,
+.story-text a:link {
+    color: white;
+    text-decoration: none;
 
+}
 .image-item img {
     width: 100%;
     max-width: 400px;
@@ -395,249 +192,113 @@ justify-items: center; /* Center the images */
     margin-top: 20px;
 }
 
-/* Optional: Add responsive design */
-@media (max-width: 768px) {
-.image-gallery {
-grid-template-columns: 1fr; /* Single column for small screens */
+
+/* h2 for titles */
+ h2 {
+    font-family: 'Rellion', sans-serif;
+    color: #9b0000;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+
+}
+/* h2 for titles */
+h3 {
+    font-family: 'Rellion', sans-serif;
+    color: #9b0000;
+    text-align: center;
+    font-size: 1.2rem;
+
 }
 
-#our-story {
-max-width: 100%; /* Allow it to stretch on smaller screens */
-}
-
-.story-text {
+/* GALLERY STYLING */
+.slideshow-container {
+    position: relative;
     max-width: 100%;
-    /* Ensure text does not overflow */
-}
-}
-
-/* Adjusting font size and margins for readability */
-.story-text p {
-margin-bottom: 20px;
+    margin: auto;
 }
 
+.slide {
+    display: none;
+}
 
-.closing {
-    font-size: 1.3rem;
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Navigation buttons  for gallery*/
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
     font-weight: bold;
-    margin-top: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Dots (Indicators) */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .active {
-    display: flex;
+    background-color: #717171;
 }
-
-/* Ensure itinerary content shows up */
-.itinerary-content {
-    display: block !important; /* Ensure it is visible */
-    opacity: 1 !important; /* Ensure it's fully opaque */
-    visibility: visible !important; /* Ensure it's not hidden */
-    padding: 20px; /* Add padding for spacing inside the content */
-    width: 100%; /* Make the content take up full width of the container */
-    text-align: center; /* Center the text within the content */
-}
-
-/* Adjust RSVP width for larger screens */
-#itinerary {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    /* Allow more space */
-    max-width: 700px;
-    /* Keep it readable */
-    margin: 40px auto;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
-
-#itinerary h2 {
-    font-size: 2.5rem; /* Set heading font size */
-    color: #9b0000; /* Red color for consistency with the theme */
-    margin-bottom: 20px; /* Space between the heading and the text */
-}
-
-#itinerary .story-text {
-    font-size: 1.3rem; /* Text size for the story section */
-    color: #ccc; /* Light gray for the text */
-    margin-bottom: 20px; /* Add space after each paragraph */
-    line-height: 1.6; /* Line height for better readability */
-}
-
-#itinerary .highlight {
-    color: #9b0000; /* Red color for highlighted text */
-    font-weight: bold;
-}
-
-/* Make it responsive for smaller screens */
-@media (max-width: 768px) {
-    #itinerary {
-        width: 90%; /* Increase the width for smaller screens */
-        padding: 20px;
-    }
-
-    #itinerary h2 {
-        font-size: 2rem; /* Adjust the font size for smaller screens */
-    }
-
-    #itinerary .story-text {
-        font-size: 1.1rem; /* Adjust text size for better readability */
-    }
-}
+/* ----------- */
 
 
-//* Sidebar Styling */
-.itinerary-sidebar {
-width: 200px; /* Fixed sidebar width */
-background: rgba(0, 0, 0, 0.6); /* Match the overall theme */
-padding: 15px;
-border-radius: 10px;
-box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1); /* Softer shadow */
-}
-
-/* Sidebar Links */
-.itinerary-sidebar a {
-display: block;
-text-decoration: none;
-color: #ccc; /* Light gray for readability */
-font-weight: bold;
-padding: 10px;
-transition: 0.3s ease-in-out;
-border-radius: 5px;
-}
-
-/* Hover Effect */
-.itinerary-sidebar a:hover {
-color: white;
-background-color: #9b0000; /* Coral hover effect */
-}
-
-
-.itinerary-sidebar a:hover {
-color: white;
-background-color: #9b0000;
-border-radius: 5px;
-}
-
-/* Main Content Styling */
-.itinerary-content section {
-display: block !important;
-opacity: 1 !important;
-visibility: visible !important;
-height: auto !important;
-}
-
-
-
-
-/* Individual Sections */
-.itinerary-content section {
-margin-bottom: 30px;
-}
-
-h2 {
-color: #000;
-}
-
-
-p {
-    color: #ccc;
-}
-
-/* Style for the Welcome Section */
-#events {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    padding: 40px;
-    width: 80%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    max-width: 900px;
-}
-/* Styling for the events section */
-#events h2 {
-font-size: 2.5rem;
-color: #9b0000;
-margin-bottom: 20px;
-}
-
+/* EVENTS STYLING */
 /* Style for each event */
 .event {
-margin-bottom: 20px;
-padding: 10px 0;
-}
+    margin-bottom: 20px;
+    padding: 10px 0;
+    }
+    
+    /* Style for the event date (bold and underlined) */
+    .event-date {
+    font-size: 1.8rem;
+    font-family: Rellion;
+    font-weight: bold;
+    color: #9b0000; 
+    margin-bottom: 5px;
+    }
+    
+    /* Style for the event name */
+    .event-name {
+    font-size: 1.5rem;
+    font-family: Rellion;
 
-/* Style for the event date (bold and underlined) */
-.event-date {
-font-size: 1.8rem;
-font-weight: bold;
-color: #9b0000; /* Matching with the theme color */
-margin-bottom: 5px;
-}
+    color: #ccc;
+    margin-left: 20px; /* Adds spacing between date and event name */
+    }
 
-/* Style for the event name */
-.event-name {
-font-size: 1.5rem;
-color: #ccc;
-margin-left: 20px; /* Adds spacing between date and event name */
-}
+/* ------------------ */
 
-/* Optional: Style for the 'Full Details to Follow' text */
-.story-text {
-    font-size: 1.3rem;
-        /* Text size for the story section */
-        color: #ccc;
-        /* Light gray for the text */
-        margin-bottom: 20px;
-        /* Add space after each paragraph */
-        line-height: 1.6;
-        /* Line height for better readability */
-}
-
-#book-here {
-text-align: center;
-background-color: rgba(0, 0, 0, 0.6);
-padding: 30px;
-border-radius: 10px;
-max-width: 900px;
-margin: 0 auto;
-}
-
-#book-here h2 {
-font-size: 2.5rem;
-color: #9b0000;
-margin-bottom: 15px;
-}
-
-#book-here h3 {
-font-size: 2rem;
-color: #9b0000;
-margin-top: 20px;
-text-decoration: underline;
-}
-
-#book-here p {
-font-size: 1.3rem;
-color: #ccc;
-margin-bottom: 15px;
-line-height: 1.6;
-}
-
-.highlight {
-color: #9b0000;
-font-weight: bold;
-}
-
-.important-note {
-font-size: 1.3rem;
-font-weight: bold;
-color: #9b0000;
-margin-top: 15px;
-}
 
 /* Adjust RSVP width for larger screens */
 #rsvp {
@@ -694,7 +355,7 @@ textarea {
     padding: 12px;
     border-radius: 5px;
     border: none;
-    font-size: 1.1rem;
+    font-size: .8rem;
 }
 
 /* Make the button centered and responsive */
@@ -725,7 +386,6 @@ button:hover {
 
 /* Radio button styling */
 .radio-group {
-    display: flex;
     flex-direction: column;
     /* Stack radio buttons */
     align-items: center;
@@ -743,76 +403,6 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-
-#room-details {
-text-align: center;
-background-color: rgba(0, 0, 0, 0.6);
-padding: 40px;
-border-radius: 10px;
-max-width: 1000px;
-margin: 0 auto;
-color: #ccc;
-}
-
-#room-details h2 {
-font-size: 2.8rem;
-color: #9b0000;
-margin-bottom: 20px;
-}
-
-#room-details h3 {
-font-size: 2.2rem;
-color: #9b0000;
-margin-top: 30px;
-}
-
-#room-details h4 {
-font-size: 2rem;
-color: #9b0000;
-margin-top: 25px;
-}
-
-#room-details h5 {
-font-size: 1.8rem;
-color: #9b0000;
-margin-top: 20px;
-}
-
-.room-category {
-margin-bottom: 35px;
-text-align: left;
-}
-
-.room-description {
-font-size: 1.3rem;
-line-height: 1.6;
-margin-top: 15px;
-}
-
-ul {
-list-style-type: none;
-padding-left: 0;
-font-size: 1.2rem;
-margin-bottom: 15px;
-}
-
-ul li {
-margin-bottom: 10px;
-}
-
-ul li em {
-font-style: italic;
-}
-
-ul li strong {
-font-weight: bold;
-}
-
-.room-category p {
-font-size: 1.3rem;
-margin-top: 10px;
 }
 
 
@@ -847,7 +437,6 @@ margin-bottom: 5px;
 }
 
 form .radio-group {
-display: ;
 justify-content: center; /* Centers radio buttons horizontally */
 gap: 10px;
 margin-bottom: 10px;
@@ -861,126 +450,5 @@ form button {
 width: auto; /* Optional: adjust button to content width */
 margin-top: 10px; /* Small space above the button */
 }
-/* Gallery Section */
-#gallery {
-    width: 100%;
-    max-width: 800px;
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Smaller width */
-    margin: 40px auto;
-    text-align: center;
-}
 
-/* Title Styling */
-#gallery h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #9b0000;
-}
 
-/* Slideshow Container */
-.slideshow-container {
-    position: relative;
-    /* Ensures dots stay inside the container */
-    width: 100%;
-    max-width: 500px;
-    /* Adjust width as needed */
-    margin: 0 auto;
-}
-
-/* Individual Slide */
-.gallery-slide {
-    display: none;
-    width: 100%;
-    text-align: center;
-}
-
-/* Smaller Slide Images */
-.gallery-slide img {
-    width: 80%;
-    /* Adjust size */
-    max-width: 500px;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Fading Effect */
-.fade {
-    animation: fadeEffect 1.5s;
-}
-
-@keyframes fadeEffect {
-    from {
-        opacity: 0.5;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* Navigation Buttons */
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 25px;
-    font-weight: bold;
-    padding: 8px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.prev {
-    left: 5px;
-}
-
-.next {
-    right: 5px;
-}
-
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-/* Hide dots by default */
-.dots-container {
-    display: none;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-/* Show dots when inside the gallery */
-#gallery .dots-container {
-    display: flex;
-}
-
-/* Prevent dots from shifting on mobile */
-@media (max-width: 768px) {
-    .dots-container {
-        position: relative;
-        /* Keeps them within the gallery */
-        bottom: 0;
-        margin-top: 5px;
-    }
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    margin: 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.dot.active,
-.dot:hover {
-    background-color: #9b0000;
-}
